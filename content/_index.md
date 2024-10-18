@@ -6,7 +6,6 @@ type: landing
 sections:
   - block: resume-biography
     content:  
-      title: 👋 Hey, I’m Muhang
       # Note: `username` refers to the user's folder name in `content/authors/`
       # The user's folder name in content/authors/
       username: admin
@@ -38,3 +37,4 @@ sections:
   #       # Customize the section spacing. Order is top, right, bottom, left.
   #       padding: [0, 0, 0, 0]
 ---
+👋 Hey, I’m Muhang
