@@ -22,12 +22,15 @@ sections:
       is_education_first: false
       spacing:
         # Customize the section spacing. Order is top, right, bottom, left.
-        padding: ['20px', '0', '20px', '0']
-
+        padding: [0, 0, 0, 0]
   - block: skills
     content:
       # Note: `username` refers to the user's folder name in `content/authors/`
       username: admin
+    design:
+      spacing:
+        # Customize the section spacing. Order is top, right, bottom, left.
+        padding: [0, 0, 0, 0]
 ---
 
 
