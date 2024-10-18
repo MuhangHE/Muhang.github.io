@@ -11,7 +11,7 @@ image:
 authors:
   - admin
   - Ted
-
+draft: true
 tags:
   - Academic
   - Hugo Blox
