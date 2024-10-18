@@ -8,8 +8,6 @@ main:
   - name: Topics
     url: tags/
     weight: 20
-  - name: Uses
-    url: uses/
-    weight: 30
   - name: Fun
     url: fun
+    weight: 30
