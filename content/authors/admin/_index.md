@@ -53,6 +53,12 @@ highlight_name: true
 # Author's website URL
 website: ""
 
+
+interests:
+  - Ultrasound
+  - Photoacoustic
+  - Deep Learning
+
 education:
   - area: Ph.D. Student
     institution: Case Western Reserve Unversity
@@ -67,11 +73,6 @@ education:
     summary: |
       - GPA: 3.8/4.3
       - Shanghai Outstanding Undergraduate Graduate 
-
-interests:
-  - Ultrasound
-  - Photoacoustic
-  - Deep Learning
 
 skills:
   - name: Technical Skills
