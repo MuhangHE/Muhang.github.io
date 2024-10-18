@@ -8,6 +8,6 @@ main:
   - name: blogs
     url: blog
     weight: 20
-  - name: Fun
-    url: fun
+  - name: Experiences
+    url: Experiences/
     weight: 30
