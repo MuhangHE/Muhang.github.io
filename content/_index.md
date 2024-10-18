@@ -5,7 +5,9 @@ type: landing
 
 sections:
   - block: resume-biography
-    content:
+    content:  
+      title: 👋 Hey, I’m Muhang
+      # Note: `username` refers to the user's folder name in `content/authors/`
       # The user's folder name in content/authors/
       username: admin
     design:

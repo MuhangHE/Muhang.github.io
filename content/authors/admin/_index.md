@@ -106,7 +106,7 @@ skills:
         percent: 80
         icon: camera
 ---
-## I live in Cleveland, exploring the frontiers of Photoacoustics and Ultrasound imaging for innovative research and advanced biomedical applications.
+
 
 I aspire to embrace the warmth, positivity, and boundless joy that life offers, and to become a person who radiates a deep love for life.
 
