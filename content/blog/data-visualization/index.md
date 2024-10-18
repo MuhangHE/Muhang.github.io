@@ -8,6 +8,7 @@ tags:
   - Hugo
   - Hugo Blox
   - Markdown
+draft: true
 image:
   caption: 'Image credit: [**Unsplash**](https://unsplash.com)'
 ---
