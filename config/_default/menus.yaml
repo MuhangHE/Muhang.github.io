@@ -12,4 +12,4 @@ main:
     url: uses/
     weight: 30
   - name: Fun
-    url: fun/
+    url: uses/
