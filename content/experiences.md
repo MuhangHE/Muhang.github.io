@@ -1,5 +1,6 @@
 ---
-title: Experiences
+title: 'Experiences'
+type: landing
 date: 2024-10-18
 reading_time: false
 
