@@ -1,6 +1,6 @@
 ---
 title: 如何恢复能量
-data: 2024-10-17
+date: 2024-10-01
 # subtitle: subtitle
 summary: 一些简单的事实和方法
 authors:
