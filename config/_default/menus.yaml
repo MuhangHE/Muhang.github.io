@@ -9,5 +9,5 @@ main:
     url: blog
     weight: 20
   - name: Experiences
-    url: Experiences/
+    url: experiences/
     weight: 30

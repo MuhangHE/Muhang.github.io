@@ -54,7 +54,7 @@ highlight_name: true
 website: ""
 
 education:
-  - area: Ph.D. Student | Biomedical Engineering
+  - area: Ph.D. Student
     institution: Case Western Reserve Unversity
     date_start: 2024-08-26
     date_end: 2029-09-01
