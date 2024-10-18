@@ -1,8 +1,8 @@
 ---
-title: 如何恢复能量
+title: 周记
 show_date: true
 # subtitle: subtitle
-summary: 一些简单的事实和方法
+summary: 一努力做到每周记录一次，用于追溯和回忆。
 authors:
   - admin
 tags:
