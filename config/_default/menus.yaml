@@ -11,3 +11,6 @@ main:
   - name: Experiences
     url: experiences/
     weight: 30
+  - name: Contact
+    url: contact/
+    weight: 40

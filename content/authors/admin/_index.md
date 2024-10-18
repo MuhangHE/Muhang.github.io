@@ -110,4 +110,5 @@ skills:
 I aspire to embrace the warmth, positivity, and boundless joy that life offers, and to become a person who radiates a deep love for life.
 
 ## Pics
-<img src="fun/111.png" alt="图片描述" width="300" style="box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5), -5px -5px 15px rgba(255, 255, 255, 0.2);"/>
+<!-- <img src="fun/111.png" alt="图片描述" width="300" style="box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);"/> -->
+
