@@ -106,9 +106,13 @@ skills:
         percent: 80
         icon: camera
 ---
-## About Me
+## I live in Cleveland, exploring the frontiers of Photoacoustics and Ultrasound imaging for innovative research and advanced biomedical applications.
+
 I aspire to embrace the warmth, positivity, and boundless joy that life offers, and to become a person who radiates a deep love for life.
 
-## Pics
-<!-- <img src="fun/111.png" alt="图片描述" width="300" style="box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);"/> -->
+My research interests include:
+- Ultrasound
+- Photoacoustic
+- Deep Learning
+
 
