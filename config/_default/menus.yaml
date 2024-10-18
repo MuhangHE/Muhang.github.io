@@ -6,7 +6,7 @@ main:
     url: /
     weight: 10
   - name: blogs
-    url: blog
+    url: /#blog
     weight: 20
   - name: Experiences
     url: experiences/
