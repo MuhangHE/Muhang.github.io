@@ -53,6 +53,25 @@ highlight_name: true
 # Author's website URL
 website: ""
 
+education:
+  - area: Ph.D. Student | Biomedical Engineering
+    institution: Case Western Reserve Unversity
+    date_start: 2024-08-26
+    date_end: 2029-09-01
+    summary: |
+      Focus on advancing photoacoustic imaging. Supervised by [Dr. Rui Cao](https://www.rui-pa.com/team). 
+    # button:
+    #   text: 'Read Thesis'
+    #   url: 'https://example.com'
+  - area: BEng Biomedical Engineering
+    institution: Shanghai Jiao Tong University
+    date_start: 2020-09-01
+    date_end: 2024-06-30
+    summary: |
+      GPA: 3.8/4.3
+      Shanghai Outstanding Undergraduate Graduate 
+
+
 skills:
   - name: Technical Skills
     items:
@@ -63,7 +82,7 @@ skills:
       - name: Matlab
         description: ''
         percent: 100
-        icon: devicon/rstudio
+        icon: devicon/matlab
       - name: PyTorch
         description: ''
         percent: 40
@@ -79,7 +98,7 @@ skills:
       - name: Electric Guitar
         description: ''
         percent: 100
-        icon: guitar
+        icon: "custom/electric-guitar"
       - name: Photography
         description: ''
         percent: 80
