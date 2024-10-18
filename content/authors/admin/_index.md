@@ -110,9 +110,5 @@ skills:
 
 I aspire to embrace the warmth, positivity, and boundless joy that life offers, and to become a person who radiates a deep love for life.
 
-My research interests include:
-- Ultrasound
-- Photoacoustic
-- Deep Learning
 
 
