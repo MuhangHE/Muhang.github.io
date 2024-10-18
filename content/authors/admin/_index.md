@@ -59,7 +59,7 @@ education:
     date_start: 2024-08-26
     date_end: 2029-09-01
     summary: |
-      Focus on advancing photoacoustic imaging. Supervised by [Dr. Rui Cao](https://www.rui-pa.com/team). 
+      Focus on advancing photoacoustic imaging. Supervised by [Dr Rui Cao](https://www.rui-pa.com/team). 
     # button:
     #   text: 'Read Thesis'
     #   url: 'https://example.com'
@@ -69,7 +69,7 @@ education:
     date_end: 2024-06-30
     summary: |
       - GPA: 3.8/4.3
-      
+
       - Shanghai Outstanding Undergraduate Graduate 
 
 
