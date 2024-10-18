@@ -21,7 +21,7 @@ show_featured_image: false
 
 ##### 健康的获取能量
 
-<img src="featured.png" width="300" style="display: block; margin: 0 auto; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); border-radius: 8px;" />
+<img src="recovery.png" width="300" style="display: block; margin: 0 auto; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); border-radius: 8px;" />
 
 同时，我也收集到如何减少手机使用频率的办法：
 - 意识到：不会错过重要的消息是戒掉手机的第一步
