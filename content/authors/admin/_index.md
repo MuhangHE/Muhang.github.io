@@ -98,7 +98,7 @@ skills:
       - name: Electric Guitar
         description: ''
         percent: 100
-        icon: "custom/electric-guitar"
+        icon: "custom/guitar-solid"
       - name: Photography
         description: ''
         percent: 80
