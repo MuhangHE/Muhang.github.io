@@ -54,7 +54,7 @@ highlight_name: true
 website: ""
 
 education:
-  - area: Ph.D. Student
+  - area: Ph.D. Student | Biomedical Engineering
     institution: Case Western Reserve Unversity
     date_start: 2024-08-26
     date_end: 2029-09-01
@@ -105,5 +105,7 @@ skills:
         percent: 80
         icon: camera
 ---
+## About Me
 
-Embrace the warmth, positivity, and joy that life has to offer, and become a person who radiates love for life.
+Delving into the cutting-edge realms of Photoacoustics and Ultrasound imaging, driving innovative research and pioneering advancements in biomedical applications. Under the guidance of <a href="https://www.rui-pa.com/home">Dr. Rui Cao</a>.
+I aspire to embrace the warmth, positivity, and boundless joy that life offers, and to become a person who radiates a deep love for life
