@@ -33,7 +33,7 @@ sections:
     design:
       spacing:
         # Customize the section spacing. Order is top, right, bottom, left.
-        margin: [-30, 0, 0, 0]  # 负值的 margin 可以生效
+        margin: [-60, 0, 0, 0]  # 负值的 margin 可以生效
 ---
 
 
