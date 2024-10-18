@@ -36,7 +36,7 @@ header:
 # Site footer
 footer:
   copyright:
-    notice: '© {year}2024 ⋅ Muhang He⋅ All Rights Reserved  {license}'
+    notice: '© {year}2024 ⋅ Muhang He⋅ All Rights Reserved '
     license:
       enable: true
       allow_derivatives: false
