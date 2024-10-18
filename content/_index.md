@@ -2,38 +2,45 @@
 title: 'Home'
 date: 2023-10-24
 type: landing
+
 sections:
-  - block: resume-biography
+  - block: resume-biography-3
     content:
-      # The user's folder name in content/authors/
+      # Choose a user profile to display (a folder name within `content/authors/`)
       username: admin
+      text: ""
+      # Show a call-to-action button under your biography? (optional)
     design:
-      # banner:
-      #   # Upload your cover image to the `assets/media/` folder and reference it here
-      #   filename: kalen-emsley-Bkci_8qcdvQ-unsplash.jpg
-      spacing:
-        padding: [0, 0, 0, 0]
-      biography:
-        style: 'text-align: justify; font-size: 0.8em;'
-  - block: experience
-    content:
-      username: admin
-    design:
-      # Hugo date format
-      date_format: 'January 2006'
-      # Education or Experience section first?
-      is_education_first: false
-      spacing:
-        # Customize the section spacing. Order is top, right, bottom, left.
-        padding: [0, 0, 0, 0]
-  - block: skills
-    content:
-      # Note: `username` refers to the user's folder name in `content/authors/`
-      username: admin
-    design:
-      spacing:
-        # Customize the section spacing. Order is top, right, bottom, left.
-        margin: [-60, 0, 0, 0]  # 负值的 margin 可以生效
+      css_class: dark
+      background:
+        color: black
+        image:
+          # Add your image background to `assets/media/`.
+          filename: stacked-peaks.svg
+          filters:
+            brightness: 1.0
+          size: cover
+          position: center
+          parallax: false
+  # - block: experience
+  #   content:
+  #     username: admin
+  #   design:
+  #     # Hugo date format
+  #     date_format: 'January 2006'
+  #     # Education or Experience section first?
+  #     is_education_first: false
+  #     spacing:
+  #       # Customize the section spacing. Order is top, right, bottom, left.
+  #       padding: [0, 0, 0, 0]
+  # - block: skills
+  #   content:
+  #     # Note: `username` refers to the user's folder name in `content/authors/`
+  #     username: admin
+  #   design:
+  #     spacing:
+  #       # Customize the section spacing. Order is top, right, bottom, left.
+  #       padding: [0, 0, 0, 0]
 ---
 
 

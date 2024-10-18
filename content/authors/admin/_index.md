@@ -68,7 +68,10 @@ education:
       - GPA: 3.8/4.3
       - Shanghai Outstanding Undergraduate Graduate 
 
-
+interests:
+  - Ultrasound
+  - Photoacoustic
+  - Deep Learning
 
 skills:
   - name: Technical Skills
