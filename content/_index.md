@@ -36,5 +36,3 @@ sections:
   #       # Customize the section spacing. Order is top, right, bottom, left.
   #       padding: [0, 0, 0, 0]
 ---
-## Pics
-<img src="fun/111.png" alt="图片描述" width="300"/>
