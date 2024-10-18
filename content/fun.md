@@ -1,6 +1,6 @@
 ---
 title: 1111111111112d
-date: 2023-10-1
+date: 2023-10-12
 hide_date: true
 reading_time: false
 ---
