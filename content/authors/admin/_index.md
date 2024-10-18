@@ -59,10 +59,7 @@ education:
     date_start: 2024-08-26
     date_end: 2029-09-01
     summary: |
-      Focus on advancing photoacoustic imaging. Supervised by [Dr Rui Cao](https://www.rui-pa.com/team). 
-    # button:
-    #   text: 'Read Thesis'
-    #   url: 'https://example.com'
+      Thesis on _Why LLMs are awesome_. Supervised by [Prof Joe Smith](https://example.com). Presented papers at 5 IEEE conferences with the contributions being published in 2 Springer journals.
   - area: BEng Biomedical Engineering
     institution: Shanghai Jiao Tong University
     date_start: 2020-09-01
