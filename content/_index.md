@@ -31,9 +31,9 @@ sections:
       # Note: `username` refers to the user's folder name in `content/authors/`
       username: admin
     design:
-      spacing:
-        # Customize the section spacing. Order is top, right, bottom, left.
-        padding: [0, 0, 0, 0]
+    spacing:
+      # Customize the section spacing. Order is top, right, bottom, left.
+      margin: [-10px, 0, -10px, 0]  # 负值的 margin 可以生效
 ---
 
 
