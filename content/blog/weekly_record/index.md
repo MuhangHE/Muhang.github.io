@@ -3,6 +3,7 @@ title: 周记
 show_date: true
 # subtitle: subtitle
 summary: 一努力做到每周记录一次，用于追溯和回忆。
+draft: true
 authors:
   - admin
 tags:
