@@ -108,4 +108,4 @@ skills:
 ## About Me
 
 Delving into the cutting-edge realms of Photoacoustics and Ultrasound imaging, driving innovative research and pioneering advancements in biomedical applications. Under the guidance of <a href="https://www.rui-pa.com/home">Dr. Rui Cao</a>.
-I aspire to embrace the warmth, positivity, and boundless joy that life offers, and to become a person who radiates a deep love for life
+I aspire to embrace the warmth, positivity, and boundless joy that life offers, and to become a person who radiates a deep love for life.
