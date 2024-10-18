@@ -37,11 +37,11 @@ header:
 footer:
   copyright:
     notice: '© {year} ⋅ Muhang He⋅ All Rights Reserved '
-    license:
-      enable: true
-      allow_derivatives: false
-      share_alike: true
-      allow_commercial: false
+    # license:
+    #   enable: true
+    #   allow_derivatives: false
+    #   share_alike: true
+    #   allow_commercial: false
 
 # Localization
 locale:
