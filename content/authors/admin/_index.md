@@ -54,16 +54,36 @@ highlight_name: true
 website: ""
 
 skills:
-  - name: "Stoma Care"
-    level: "Expert"
-  - name: "Health Education"
-    level: "Advanced"
-  - name: "Team Collaboration"
-    level: "Intermediate"
-hobbies:
-  - name: "Swimming"
-  - name: "Gym Training"
-  - name: "Reading"
+  - name: Technical Skills
+    items:
+      - name: Python
+        description: ''
+        percent: 80
+        icon: devicon/python
+      - name: Matlab
+        description: ''
+        percent: 100
+        icon: devicon/rstudio
+      - name: PyTorch
+        description: ''
+        percent: 40
+        icon: devicon/pytorch
+  - name: Hobbies
+    color: '#eeac02'
+    color_border: '#f0bf23'
+    items:
+      - name: Cats
+        description: ''
+        percent: 100
+        icon: cat
+      - name: Electric Guitar
+        description: ''
+        percent: 100
+        icon: guitar
+      - name: Photography
+        description: ''
+        percent: 80
+        icon: camera
 ---
 
 Embrace the warmth, positivity, and joy that life has to offer, and become a person who radiates love for life.

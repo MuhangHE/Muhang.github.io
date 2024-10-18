@@ -12,7 +12,7 @@ sections:
         padding: [0, 0, 0, 0]
       biography:
         style: 'text-align: justify; font-size: 0.8em;'
-  - block: resume-skills
+  - block: skills
     content:
       # Note: `username` refers to the user's folder name in `content/authors/`
       username: admin
