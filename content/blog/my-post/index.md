@@ -1,9 +1,10 @@
 ---
 title: 如何恢复能量
 data: 2024-10-17
-subtitle: subtitle
-featured: true
-profile: false
+# subtitle: subtitle
+summary: 一些简单的事实和方法
+authors:
+  - admin
 tags:
   - 自我成长
 ---
