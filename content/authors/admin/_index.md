@@ -52,6 +52,18 @@ highlight_name: true
 
 # Author's website URL
 website: ""
+
+skills:
+  - name: "Stoma Care"
+    level: "Expert"
+  - name: "Health Education"
+    level: "Advanced"
+  - name: "Team Collaboration"
+    level: "Intermediate"
+hobbies:
+  - name: "Swimming"
+  - name: "Gym Training"
+  - name: "Reading"
 ---
 
 Embrace the warmth, positivity, and joy that life has to offer, and become a person who radiates love for life.
