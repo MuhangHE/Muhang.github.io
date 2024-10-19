@@ -17,16 +17,17 @@ sections:
         padding: [0, 0, 0, 0]
       biography:
         style: 'text-align: justify; font-size: 0.8em;'
-  - block: cta-button-list
-    content:  
-      buttons:
-        - text: Read my latest paper on LLMs
-          icon: brands/arxiv
-          url: https://arxiv.org/abs/2304.01852
-    design:
-      spacing:
-        # Customize the section spacing. Order is top, right, bottom, left.
-        padding: [0, 0, 0, 0]
+    #这一个block用来添加横向按钮的
+  # - block: cta-button-list
+  #   content:  
+  #     buttons:
+  #       - text: Read my latest paper on LLMs
+  #         icon: brands/arxiv
+  #         url: https://arxiv.org/abs/2304.01852
+  #   design:
+  #     spacing:
+  #       # Customize the section spacing. Order is top, right, bottom, left.
+  #       padding: [0, 0, 0, 0]
   - block: collection
     id: blog
     content:
