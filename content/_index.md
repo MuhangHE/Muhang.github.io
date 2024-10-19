@@ -48,21 +48,22 @@ sections:
       is_education_first: false
       padding: [0, 0, 0, 0]
       margin: [0, 0, -100px, 0]  # 减少顶部的间距
-  - block: stats
-    content:
-      title: "📊 My Statistics"
-      items:
-        - statistic: "100%"
-          description: "Customer Satisfaction"
-        - statistic: "24/7"
-          description: "Support Availability"
-        - statistic: "1M+"
-          description: "Active Users"
-    design:
-      spacing:
-        # Customize the section spacing. Order is top, right, bottom, left.
-        padding: [0, 0, 0, 0]
-        margin: [-100px, 0, 100px, 0]  # 减少顶部的间距
+  #隐藏stats
+  # - block: stats
+  #   content:
+  #     title: "📊 My Statistics"
+  #     items:
+  #       - statistic: "100%"
+  #         description: "Customer Satisfaction"
+  #       - statistic: "24/7"
+  #         description: "Support Availability"
+  #       - statistic: "1M+"
+  #         description: "Active Users"
+  #   design:
+  #     spacing:
+  #       # Customize the section spacing. Order is top, right, bottom, left.
+  #       padding: [0, 0, 0, 0]
+  #       margin: [-100px, 0, 100px, 0]  # 减少顶部的间距
   
 ---
 👋 Hey, I’m Muhang
