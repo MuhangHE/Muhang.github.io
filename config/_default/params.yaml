@@ -51,10 +51,7 @@ locale:
 # Site features
 features:
   comment:
-    # Choose a provider: giscus, disqus, commento, or '' to disable commenting
     provider: 'commento'
-      # If you self-host Commento, enter your custom Commento URL here.
-      url: ''
   math:
     enable: false
   privacy_pack:
