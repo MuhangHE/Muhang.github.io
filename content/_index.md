@@ -17,7 +17,7 @@ sections:
         padding: [0, 0, 0, 0]
       biography:
         style: 'text-align: justify; font-size: 0.8em;'
-  - block: buttons
+  - block: cta-button-list
     content:  
       buttons:
         - title: Read my latest paper on LLMs
