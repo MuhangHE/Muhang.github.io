@@ -38,7 +38,7 @@ sections:
       spacing:
         # Customize the section spacing. Order is top, right, bottom, left.
         padding: [0, 0, 0, 0]
-  - block: experience
+  - block: resume-experience
     content:
       username: admin
     design:
