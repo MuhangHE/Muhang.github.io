@@ -47,6 +47,7 @@ sections:
       # Education or Experience section first?
       is_education_first: false
       padding: [0, 0, 0, 0]
+      margin: [0, 0, -100px, 0]  # 减少顶部的间距
   - block: stats
     content:
       title: "📊 My Statistics"
