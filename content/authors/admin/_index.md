@@ -65,7 +65,7 @@ education:
     date_start: 2024-08-26
     date_end: 2029-09-01
     summary: |
-      Exploring the frontiers of Photoacoustics and Ultrasound imaging for innovative research and advanced biomedical applications. Supervised by <a href="https://www.rui-pa.com/home">Dr. Rui Cao</a>.
+      - Exploring the frontiers of Photoacoustics and Ultrasound imaging for innovative research and advanced biomedical applications. Supervised by <a href="https://www.rui-pa.com/home">Dr. Rui Cao</a>.
   - area: BEng Biomedical Engineering
     institution: Shanghai Jiao Tong University
     date_start: 2020-09-01
