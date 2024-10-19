@@ -47,24 +47,21 @@ sections:
       # Education or Experience section first?
       is_education_first: false
       padding: [0, 0, 0, 0]
-  # - block: experience
-  #   content:
-  #     username: admin
-  #   design:
-  #     # Hugo date format
-  #     date_format: 'January 2006'
-  #     # Education or Experience section first?
-  #     is_education_first: false
-  #     spacing:
-  #       # Customize the section spacing. Order is top, right, bottom, left.
-  #       padding: [0, 0, 0, 0]
-  # - block: skills
-  #   content:
-  #     # Note: `username` refers to the user's folder name in `content/authors/`
-  #     username: admin
-  #   design:
-  #     spacing:
-  #       # Customize the section spacing. Order is top, right, bottom, left.
-  #       padding: [0, 0, 0, 0]
+  - block: stats
+    content:
+    title: "📊 My Statistics"
+    text: "Here are some important stats!"
+    items:
+      - statistic: "100%"
+        description: "Customer Satisfaction"
+      - statistic: "24/7"
+        description: "Support Availability"
+      - statistic: "1M+"
+        description: "Active Users"
+    design:
+      spacing:
+        # Customize the section spacing. Order is top, right, bottom, left.
+        padding: [0, 0, 0, 0]
+  
 ---
 👋 Hey, I’m Muhang
