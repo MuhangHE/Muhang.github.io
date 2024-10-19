@@ -20,9 +20,13 @@ sections:
   - block: cta-button-list
     content:  
       buttons:
-        - title: Read my latest paper on LLMs
+        - text: Read my latest paper on LLMs
           icon: brands/arxiv
           url: https://arxiv.org/abs/2304.01852
+    design:
+      spacing:
+        # Customize the section spacing. Order is top, right, bottom, left.
+        padding: [0, 0, 0, 0]
   - block: collection
     id: blog
     content:
