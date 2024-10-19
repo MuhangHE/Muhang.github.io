@@ -49,14 +49,14 @@ sections:
       padding: [0, 0, 0, 0]
   - block: stats
     content:
-    title: "📊 My Statistics"
-    items:
-      - statistic: "100%"
-        description: "Customer Satisfaction"
-      - statistic: "24/7"
-        description: "Support Availability"
-      - statistic: "1M+"
-        description: "Active Users"
+      title: "📊 My Statistics"
+      items:
+        - statistic: "100%"
+          description: "Customer Satisfaction"
+        - statistic: "24/7"
+          description: "Support Availability"
+        - statistic: "1M+"
+          description: "Active Users"
     design:
       spacing:
         # Customize the section spacing. Order is top, right, bottom, left.
