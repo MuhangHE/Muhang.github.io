@@ -50,7 +50,6 @@ sections:
   - block: stats
     content:
     title: "📊 My Statistics"
-    text: "Here are some important stats!"
     items:
       - statistic: "100%"
         description: "Customer Satisfaction"
