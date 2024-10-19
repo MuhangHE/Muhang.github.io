@@ -17,6 +17,12 @@ sections:
         padding: [0, 0, 0, 0]
       biography:
         style: 'text-align: justify; font-size: 0.8em;'
+  - block: buttons
+    content:  
+      buttons:
+        - title: Read my latest paper on LLMs
+          icon: brands/arxiv
+          url: https://arxiv.org/abs/2304.01852
   - block: collection
     id: blog
     content:
