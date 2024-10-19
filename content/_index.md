@@ -20,7 +20,7 @@ sections:
   - block: cta-button-list
     content:  
       buttons:
-        - title: Read my latest paper on LLMs
+        - text: Read my latest paper on LLMs
           icon: brands/arxiv
           url: https://arxiv.org/abs/2304.01852
   - block: collection
