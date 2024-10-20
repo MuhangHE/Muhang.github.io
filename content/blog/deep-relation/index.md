@@ -1,6 +1,5 @@
 ---
 title: 读《深度关系》有感
-date: 2024-10-19
 show_date: true
 # subtitle: subtitle
 summary: 语言是心灵的窗，否则，它们是墙
