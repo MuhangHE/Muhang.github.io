@@ -3,7 +3,6 @@ title: 恋爱的犀牛
 show_date: true
 # subtitle: subtitle
 summary: 话剧是诗
-draft: true
 authors:
   - admin
 tags:
