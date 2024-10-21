@@ -1,6 +1,6 @@
 ---
 title: 恋爱的犀牛
-data: 2024-10-20
+date: 2024-10-20
 show_date: true
 # subtitle: subtitle
 summary: 话剧是诗
