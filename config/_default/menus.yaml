@@ -5,8 +5,8 @@ main:
   - name: Home
     url: /
     weight: 10
-  - name: blogs
-    url: /#blog
+  - name: Moments
+    url: moments
     weight: 20
   - name: Experiences
     url: experiences/
