@@ -17,6 +17,7 @@ marketing:
 header:
   navbar:
     enable: true
+    align: "left"
     show_search: true
     show_theme_chooser: true
 

@@ -28,16 +28,16 @@ sections:
   #     spacing:
   #       # Customize the section spacing. Order is top, right, bottom, left.
   #       padding: [0, 0, 0, 0]
-  - block: collection
-    id: blog
-    content:
-      filters:
-        folders:
-          - blog
-    design:
-      spacing:
-        # Customize the section spacing. Order is top, right, bottom, left.
-        padding: [0, 0, 0, 0]
+  # - block: collection
+  #   id: blog
+  #   content:
+  #     filters:
+  #       folders:
+  #         - blog
+  #   design:
+  #     spacing:
+  #       # Customize the section spacing. Order is top, right, bottom, left.
+  #       padding: [0, 0, 0, 0]
   - block: resume-experience
     content:
       username: admin
