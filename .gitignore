@@ -1,0 +1,12 @@
+# Hugo build & cache
+public
+/resources/
+/hugo_stats.json
+.hugo_build.lock
+/vendor/
+_vendor/
+
+# OS junk
+.DS_Store
+desktop.ini
+Thumbs.db

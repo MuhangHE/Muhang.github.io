@@ -34,4 +34,10 @@ show_featured_image: false
 - 过分夸大一个女生和另外一个女生之间的区别是一切痛苦的根源
 - 天天发情，搞得世界上只要他一个人是雄性，其他人都是雌雄同体！
 
-(豆瓣剧评)[https://www.douban.com/location/drama/review/1505775/#comments]  
+<div style="border:1px solid #ddd; border-radius:8px; padding:1em; margin:1.5em 0; background:#fafafa;">
+  <a href="https://www.douban.com/location/drama/review/1505775/#comments" target="_blank" style="text-decoration:none; color:#0073aa; font-weight:bold; font-size:1.1em;">
+    豆瓣剧评
+  </a>
+  <p style="margin:0.5em 0 0; color:#555; font-size:0.9em;">
+  </p>
+</div>
