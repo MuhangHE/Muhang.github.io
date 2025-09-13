@@ -32,7 +32,7 @@ show_featured_image: false
 
 <figure style="text-align:center; margin: 2em 0;">
   <img src="..\..\assests\3_where_are_dear_going.png"
-       width="500"
+       width="700"
        style="display:block; margin:0 auto; box-shadow:0 4px 8px rgba(0,0,0,0.2); border-radius:8px;"
        alt="大一刷跑时路过学服，路灯照着月亮" />
 </figure>
