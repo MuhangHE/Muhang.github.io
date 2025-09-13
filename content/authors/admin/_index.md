@@ -63,7 +63,7 @@ education:
   - area: Ph.D. Student
     institution: Case Western Reserve Unversity
     date_start: 2024-08-26
-    date_end: 2029-09-01
+    date_end: Present
     summary: |
       Exploring the frontiers of Photoacoustics and Ultrasound imaging for innovative research and advanced biomedical applications. Supervised by <a href="https://www.rui-pa.com/home">Dr. Rui Cao</a>.
   - area: BEng Biomedical Engineering
