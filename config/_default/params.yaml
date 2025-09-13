@@ -38,8 +38,8 @@ locale:
 
 # Site features
 features:
-  comment:
-    provider: 'commento'
+  # comment:
+  #   provider: 'commento'
   math:
     enable: false
   privacy_pack:
