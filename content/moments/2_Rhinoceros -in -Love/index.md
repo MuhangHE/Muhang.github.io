@@ -10,7 +10,7 @@ tags:
   - 经历
 show_featured_image: false 
 ---
-《恋爱的犀牛》的语言行为表现形式我从未见过，之前所观看的话剧也就为音乐剧最甚，而《恋爱的犀牛》所展现的方式像是诗歌的三维化，在割裂抽象跳跃中铺叙一个个隐喻，在幽默与现实联动中传达编剧巧妙的串联字符，幕幕情节之间的断裂留下遐想，文学与文青的多巴胺在此间得到释放与满足。看好的话剧就像读到一首疼痛的诗一样令我震颤。这话剧最深刻的就属于台词，包含台词本身和唱演台词的演员。在此我深刻忏悔我认为话剧就是观看真人电视剧的愚蠢看法。
+《恋爱的犀牛》的语言行为表现形式我从未见过，之前所观看的话剧也就为音乐剧最甚，而《恋爱的犀牛》所展现的方式像是诗歌的三维化，在割裂抽象跳跃中铺叙一个个隐喻，在幽默与现实联动中传达编剧巧妙的串联字符，幕幕情节之间的断裂留下遐想。看好的话剧就像读到一首疼痛的诗一样令我震颤。这话剧最深刻的就属于台词，包含台词本身和唱演台词的演员。在此我深刻忏悔我认为话剧就是观看真人电视剧的愚蠢看法。
 
 我最震撼的是这一首诗：
 
@@ -34,10 +34,4 @@ show_featured_image: false
 - 过分夸大一个女生和另外一个女生之间的区别是一切痛苦的根源
 - 天天发情，搞得世界上只要他一个人是雄性，其他人都是雌雄同体！
 
-<div style="border:1px solid #ddd; border-radius:8px; padding:1em; margin:1.5em 0; background:#fafafa;">
-  <a href="https://www.douban.com/location/drama/review/1505775/#comments" target="_blank" style="text-decoration:none; color:#0073aa; font-weight:bold; font-size:1.1em;">
-    豆瓣剧评
-  </a>
-  <p style="margin:0.5em 0 0; color:#555; font-size:0.9em;">
-  </p>
-</div>
+**[豆瓣剧评](https://www.douban.com/location/drama/review/1505775/#comments)**
