@@ -86,7 +86,7 @@ skills:
         icon: devicon/matlab
       - name: PyTorch
         description: ''
-        percent: 40
+        percent: 30
         icon: devicon/pytorch
   - name: Hobbies
     color: '#eeac02'
