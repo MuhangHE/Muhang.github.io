@@ -17,7 +17,7 @@ status:
 superuser: true
 
 # Role/position/tagline
-role: First-year Ph.D. student
+role: Second-year Ph.D. student
 
 # Organizations/Affiliations to show in About widget
 organizations:
