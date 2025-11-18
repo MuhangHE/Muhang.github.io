@@ -37,15 +37,19 @@ profiles:
   #   url: https://twitter.com/GetResearchDev
   # - icon: brands/instagram
   #   url: https://www.instagram.com/
+  - icon: camera
+    url: https://muhanghe.github.io/gallary/
+    # label: Visit My Photo Gallery
+
   - icon: brands/linkedin
     url: https://www.linkedin.com/in/muhang-he-6ba811300/
   # Link to a PDF of your resume/CV - upload it to `static/uploads/resume.pdf`
   - icon: academicons/cv
     url: uploads/resume.pdf
     label: Download my resume
-  - icon: rss
-    url: ./post/index.xml
-    label: Subscribe to my blog via RSS feed
+  # - icon: rss
+  #   url: ./post/index.xml
+  #   label: Subscribe to my blog via RSS feed
 
 # Highlight the author in author lists? (true/false)
 highlight_name: true
