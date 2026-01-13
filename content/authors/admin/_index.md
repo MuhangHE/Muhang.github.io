@@ -17,7 +17,7 @@ status:
 superuser: true
 
 # Role/position/tagline
-role: Second-year Ph.D. student
+role: Second-year Ph.D. Candidate
 
 # Organizations/Affiliations to show in About widget
 organizations:
@@ -75,7 +75,7 @@ education:
     date_start: 2020-09-01
     date_end: 2024-06-30
     summary: |
-      - Shanghai Outstanding Undergraduate Graduate 
+      - Shanghai Outstanding Undergraduate Graduate
 
 skills:
   - name: Technical Skills

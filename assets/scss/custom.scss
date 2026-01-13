@@ -1,0 +1,145 @@
+/* Custom styles for wider content layout on home page */
+
+/* Adjust the main content container width */
+.max-w-prose {
+  max-width: 65rem !important;  /* Default is ~65ch, increased to ~1040px */
+}
+
+/* Biography section - make it wider */
+#section-resume-biography .max-w-prose {
+  max-width: 70rem !important;  /* ~1120px */
+}
+
+/* News section */
+#news .max-w-prose {
+  max-width: 70rem !important;  /* ~1120px */
+}
+
+/* Responsive adjustments for different screen sizes */
+@media (max-width: 768px) {
+  .max-w-prose {
+    max-width: 100% !important;
+    padding: 0 1rem;
+  }
+}
+
+/* Moments card layout styles */
+/* Year group headers */
+.year-group-heading {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin: 2.5rem 0 1rem 0;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid #e5e7eb;
+  color: #1f2937;
+}
+
+/* Dark mode year headers */
+.dark .year-group-heading {
+  border-bottom-color: #374151;
+  color: #f9fafb;
+}
+
+/* Reset any conflicting styles */
+#section-collection .grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+}
+
+/* Moment card link wrapper */
+a.moment-card-link {
+  display: block !important;
+  text-decoration: none;
+}
+
+/* Moment card default and hover effects */
+.moment-card {
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06) !important;
+  height: 200px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+}
+
+a.moment-card-link:hover .moment-card,
+.moment-card-link:hover .moment-card {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.15), 0 4px 6px -2px rgba(0, 0, 0, 0.1) !important;
+  transform: translateY(-4px) !important;
+}
+
+/* Ensure card content spacing */
+.moment-card > .uppercase {
+  flex-shrink: 0 !important;
+}
+
+.moment-card > p.moment-summary {
+  flex: 1 1 auto !important;
+  overflow: hidden !important;
+}
+
+.moment-card > div:last-child {
+  flex-shrink: 0 !important;
+}
+
+/* Dark mode */
+.dark .moment-card {
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.3), 0 1px 2px 0 rgba(0, 0, 0, 0.2) !important;
+}
+
+.dark a.moment-card-link:hover .moment-card,
+.dark .moment-card-link:hover .moment-card {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -2px rgba(0, 0, 0, 0.4) !important;
+  transform: translateY(-4px) !important;
+}
+
+/* Tag links styling */
+.moment-card a[href*="/tags/"] {
+  cursor: pointer;
+  z-index: 10;
+  position: relative;
+}
+
+.moment-card a[href*="/tags/"]:hover {
+  text-decoration: none;
+}
+
+/* Hide all images in moments section */
+#section-collection img {
+  display: none !important;
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+  gap: 0.5rem;
+}
+
+/* Responsive adjustments for moments */
+@media (max-width: 1024px) {
+  .moments-container {
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
+  }
+
+  #section-collection .grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .moments-container {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  #section-collection .grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .moment-card {
+    height: auto !important;
+    min-height: 200px !important;
+  }
+}

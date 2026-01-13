@@ -38,16 +38,8 @@ sections:
   #     spacing:
   #       # Customize the section spacing. Order is top, right, bottom, left.
   #       padding: [0, 0, 0, 0]
-  - block: resume-experience
-    content:
-      username: admin
-    design:
-      # Hugo date format
-      date_format: 'January 2006'
-      # Education or Experience section first?
-      is_education_first: false
-      padding: [0, 0, 0, 0]
-      margin: [0, 0, -100px, 0]  # 减少顶部的间距
+  # Experience/Education section hidden on home page
+  # Education is shown on the dedicated /experiences page instead
   #隐藏stats
   # - block: stats
   #   content:
@@ -64,6 +56,27 @@ sections:
   #       # Customize the section spacing. Order is top, right, bottom, left.
   #       padding: [0, 0, 0, 0]
   #       margin: [-100px, 0, 100px, 0]  # 减少顶部的间距
-  
+  # News section
+  - block: markdown
+    id: news
+    content:
+      title: Latest News
+      text: |
+        ### Started Ph.D. at Case Western Reserve University
+        *August 26, 2024*
+
+        Excited to begin my Ph.D. journey at Case Western Reserve University, working on Photoacoustics and Ultrasound imaging under the supervision of [Dr. Rui Cao](https://www.rui-pa.com/home).
+
+        ---
+
+        ### Graduated from Shanghai Jiao Tong University
+        *June 30, 2024*
+
+        Successfully completed my Bachelor's degree in Biomedical Engineering and received the Shanghai Outstanding Undergraduate Graduate award.
+    design:
+      columns: '1'
+      spacing:
+        padding: ['20px', 0, '20px', 0]
+
 ---
-👋 Hey, I’m Muhang
+👋 Hey, I'm Muhang
