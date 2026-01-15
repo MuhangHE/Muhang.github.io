@@ -1,8 +1,8 @@
 ---
-title: Started Ph.D. at Case Western Reserve University
-date: 2024-08-26
+title: SPIE oral presentation
+date: 2025-11-16
 featured: true
 ---
 
-Excited to begin my Ph.D. journey at Case Western Reserve University, working on Photoacoustics and Ultrasound imaging under the supervision of [Dr. Rui Cao](https://www.rui-pa.com/home)
+Our abstract “3D Photoacoustic Computed Tomography with Null Subtraction” has been accepted by SPIE 2026.
 <!--more-->
