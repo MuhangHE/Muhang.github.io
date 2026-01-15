@@ -57,23 +57,16 @@ sections:
   #       padding: [0, 0, 0, 0]
   #       margin: [-100px, 0, 100px, 0]  # 减少顶部的间距
   # News section
-  - block: markdown
+  - block: collection
     id: news
     content:
       title: Latest News
-      text: |
-        ### Started Ph.D. at Case Western Reserve University
-        *August 26, 2024*
-
-        Excited to begin my Ph.D. journey at Case Western Reserve University, working on Photoacoustics and Ultrasound imaging under the supervision of [Dr. Rui Cao](https://www.rui-pa.com/home).
-
-        ---
-
-        ### Graduated from Shanghai Jiao Tong University
-        *June 30, 2024*
-
-        Successfully completed my Bachelor's degree in Biomedical Engineering and received the Shanghai Outstanding Undergraduate Graduate award.
+      count: 5
+      filters:
+        folders:
+          - news
     design:
+      view: compact
       columns: '1'
       spacing:
         padding: ['20px', 0, '20px', 0]
