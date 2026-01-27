@@ -1,0 +1,22 @@
+{
+  "Hugo Front Matter": {
+    "scope": "markdown",
+    "prefix": "front",
+    "body": [
+      "---",
+      "title: $1",
+      "date: $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE",
+      "",
+      "summary: $2",
+      "authors:",
+      "  - admin",
+      "tags:",
+      "  - $3",
+      "show_featured_image: false",
+      "---",
+      "",
+      "$0"
+    ],
+    "description": "Hugo content front matter template"
+  }
+}
