@@ -1,7 +1,7 @@
-import { test } from "node:test";
+import { test, after } from "node:test";
 import assert from "node:assert/strict";
 import { publish } from "../lib/publish.mjs";
-import { mkdtemp, mkdir, writeFile } from "node:fs/promises";
+import { mkdtemp, mkdir, writeFile, rm } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { execFileSync } from "node:child_process";
@@ -10,8 +10,17 @@ function git(cwd, ...args) {
   return execFileSync("git", args, { cwd, encoding: "utf8" });
 }
 
+const tmpBases = [];
+
+after(async () => {
+  await Promise.all(
+    tmpBases.map((base) => rm(base, { recursive: true, force: true }))
+  );
+});
+
 async function repoWithRemote() {
   const base = await mkdtemp(join(tmpdir(), "pub-"));
+  tmpBases.push(base);
   const remote = join(base, "remote.git");
   const work = join(base, "work");
   await mkdir(remote, { recursive: true });
@@ -43,4 +52,13 @@ test("publish: nothing to commit -> ok:false with reason", async () => {
   const res = await publish(work, "noop");
   assert.equal(res.ok, false);
   assert.match(res.message, /nothing to commit/i);
+});
+
+test("publish: non-git-repo path -> ok:false, does not throw", async () => {
+  const dir = await mkdtemp(join(tmpdir(), "pub-nogit-"));
+  tmpBases.push(dir);
+  const res = await publish(dir, "whatever");
+  assert.equal(res.ok, false);
+  assert.equal(typeof res.message, "string");
+  assert.ok(res.message.length > 0);
 });
