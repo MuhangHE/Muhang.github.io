@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { nextPrefix, isValidSlug, createPost } from "../lib/posts.mjs";
+import { nextPrefix, isValidSlug, createPost, readPost } from "../lib/posts.mjs";
 import { mkdtemp, readFile, mkdir } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
@@ -50,4 +50,12 @@ test("createPost: rejects duplicate folder", async () => {
   const root = await tempContent();
   await createPost(root, { title: "x", slug: "dup" });
   await assert.rejects(() => createPost(root, { title: "y", slug: "dup" }), /exist/i);
+});
+
+test("readPost: splits frontmatter and body", async () => {
+  const root = await tempContent();
+  const { folder } = await createPost(root, { title: "标题", slug: "read-me" });
+  const post = await readPost(root, folder);
+  assert.equal(post.data.title, "标题");
+  assert.equal(typeof post.body, "string");
 });

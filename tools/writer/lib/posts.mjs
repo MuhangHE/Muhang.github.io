@@ -1,4 +1,4 @@
-import { readdir, mkdir, writeFile, access } from "node:fs/promises";
+import { readdir, mkdir, writeFile, access, readFile } from "node:fs/promises";
 import { join } from "node:path";
 import matter from "gray-matter";
 
@@ -61,4 +61,12 @@ export async function createPost(contentRoot, { title, slug }) {
   const md = matter.stringify("\n", data);
   await writeFile(join(dir, "index.md"), md, "utf8");
   return { folder };
+}
+
+// 读 index.md，返回 { data(frontmatter), body(正文) }。
+export async function readPost(contentRoot, folder) {
+  const file = join(contentRoot, MOMENTS, folder, "index.md");
+  const raw = await readFile(file, "utf8");
+  const parsed = matter(raw);
+  return { data: parsed.data, body: parsed.content };
 }
