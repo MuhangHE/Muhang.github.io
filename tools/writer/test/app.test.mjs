@@ -74,3 +74,30 @@ test("GET /api/posts lists created posts", async () => {
     server.close();
   }
 });
+
+test("PUT /api/posts/:folder nonexistent -> 500, no crash", async () => {
+  const { base, server } = await startApp();
+  try {
+    const res = await fetch(`${base}/api/posts/999_nope`, {
+      method: "PUT",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({ data: { title: "x" }, body: "y" }),
+    });
+    assert.equal(res.status, 500);
+  } finally {
+    server.close();
+  }
+});
+
+test("POST /api/posts/:folder/images with no file -> 400, no crash", async () => {
+  const { base, server } = await startApp();
+  try {
+    const res = await fetch(`${base}/api/posts/1_x/images`, {
+      method: "POST",
+      body: new FormData(),
+    });
+    assert.equal(res.status, 400);
+  } finally {
+    server.close();
+  }
+});
