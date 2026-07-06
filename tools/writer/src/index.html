@@ -8,27 +8,39 @@
   </head>
   <body>
     <header id="topbar">
+      <span id="brand">Muhang 写作器</span>
       <select id="project-select"></select>
-      <button id="new-project">新建</button>
+      <button id="new-project" title="新建文章">＋ 新建</button>
       <span id="save-status"></span>
       <button id="publish">发布</button>
     </header>
     <main id="workspace">
       <section id="left">
         <div id="frontmatter">
-          <label>标题 <input id="f-title" type="text" /></label>
-          <label>心情 <input id="f-summary" type="text" /></label>
-          <label>日期 <input id="f-date" type="date" /></label>
-          <label>标签 <input id="f-tags" type="text" placeholder="逗号分隔" /></label>
-          <label>封面 <input id="f-cover" type="file" accept="image/*" /></label>
-        </div>
-        <div id="toolbar">
-          <button data-module="photos">图片网格</button>
-          <button data-module="bigimage">大图</button>
-          <button data-module="quote">引用</button>
-          <button data-module="reading">清单</button>
+          <input id="f-title" type="text" placeholder="标题" autocomplete="off" />
+          <input id="f-summary" type="text" placeholder="心情" autocomplete="off" />
+          <input id="f-date" type="date" title="日期" />
+          <input id="f-tags" type="text" placeholder="标签，逗号分隔" autocomplete="off" />
+          <label id="cover-btn" title="上传封面">
+            <svg viewBox="0 0 16 16" aria-hidden="true"><rect x="1.5" y="2.5" width="13" height="11" rx="1.5"/><circle cx="5.5" cy="6.5" r="1.3"/><path d="M2.5 12l3.5-3.5 2.5 2.5 3-3 2 2"/></svg>
+            <input id="f-cover" type="file" accept="image/*" />
+          </label>
         </div>
         <div id="editor"></div>
+        <div id="toolbar">
+          <button data-module="photos" title="插入图片网格">
+            <svg viewBox="0 0 16 16" aria-hidden="true"><rect x="1.5" y="1.5" width="5.2" height="5.2" rx="1"/><rect x="9.3" y="1.5" width="5.2" height="5.2" rx="1"/><rect x="1.5" y="9.3" width="5.2" height="5.2" rx="1"/><rect x="9.3" y="9.3" width="5.2" height="5.2" rx="1"/></svg>
+          </button>
+          <button data-module="bigimage" title="插入单张大图">
+            <svg viewBox="0 0 16 16" aria-hidden="true"><rect x="1.5" y="2.5" width="13" height="11" rx="1.5"/><circle cx="5.5" cy="6.5" r="1.3"/><path d="M2.5 12l3.5-3.5 2.5 2.5 3-3 2 2"/></svg>
+          </button>
+          <button data-module="quote" title="插入引用块">
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 3.5c-1.2 1-1.8 2.3-1.8 4v5h4.5v-5H3.4c0-1.2.5-2.2 1.5-3zM10.3 3.5c-1.2 1-1.8 2.3-1.8 4v5H13v-5h-2.3c0-1.2.5-2.2 1.5-3z"/></svg>
+          </button>
+          <button data-module="reading" title="插入清单">
+            <svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="2.8" cy="4" r="1.1"/><circle cx="2.8" cy="8" r="1.1"/><circle cx="2.8" cy="12" r="1.1"/><path d="M6 4h8.5M6 8h8.5M6 12h8.5"/></svg>
+          </button>
+        </div>
       </section>
       <section id="right">
         <iframe id="preview" title="预览"></iframe>

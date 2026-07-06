@@ -1,6 +1,7 @@
 import { EditorView, basicSetup } from "codemirror";
 import { markdown } from "@codemirror/lang-markdown";
 import { EditorState } from "@codemirror/state";
+import { oneDark } from "@codemirror/theme-one-dark";
 
 // 创建 CodeMirror 编辑器。onChange 在文档变化时触发（用于自动保存）。
 export function createEditor(parent, { onChange }) {
@@ -10,6 +11,7 @@ export function createEditor(parent, { onChange }) {
       doc: "",
       extensions: [
         basicSetup,
+        oneDark,
         markdown(),
         EditorView.lineWrapping,
         EditorView.updateListener.of((u) => {
