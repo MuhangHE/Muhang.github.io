@@ -1,6 +1,6 @@
 import { api } from "./api.js";
 import { createEditor } from "./editor.js";
-import { readForm, writeForm, onFormChange } from "./form.js";
+import { readForm, writeForm, onFormChange, patchLoaded } from "./form.js";
 import { showPreview } from "./preview.js";
 import { photosGrid, bigImage, blockquote, readingList } from "./modules.js";
 
@@ -20,13 +20,18 @@ function scheduleSave() {
 
 async function save() {
   if (!currentFolder) return;
-  await api.savePost(currentFolder, readForm(), editor.getValue());
-  status.textContent = "已保存";
+  try {
+    await api.savePost(currentFolder, readForm(), editor.getValue());
+    status.textContent = "已保存";
+  } catch {
+    status.textContent = "保存失败";
+  }
 }
 
 async function openPost(folder) {
   currentFolder = folder;
   const post = await api.readPost(folder);
+  if (folder !== currentFolder) return;
   writeForm(post.data);
   editor.setValue(post.body ?? "");
   showPreview(folder);
@@ -62,10 +67,8 @@ document.getElementById("new-project").addEventListener("click", async () => {
 document.getElementById("f-cover").addEventListener("change", async (e) => {
   if (!currentFolder || !e.target.files[0]) return;
   await api.uploadCover(currentFolder, e.target.files[0]);
-  const data = readForm();
-  data.show_featured_image = true;
-  writeForm(data);
-  await api.savePost(currentFolder, { ...data, show_featured_image: true }, editor.getValue());
+  patchLoaded({ show_featured_image: true });
+  await save();
   showPreview(currentFolder);
 });
 
@@ -77,7 +80,7 @@ document.getElementById("publish").addEventListener("click", async () => {
 
 // 工具栏模块插入
 document.getElementById("toolbar").addEventListener("click", async (e) => {
-  const kind = e.target.dataset.module;
+  const kind = e.target.closest("[data-module]")?.dataset.module;
   if (!kind || !currentFolder) return;
   if (kind === "quote") return editor.insertAtCursor(blockquote());
   if (kind === "reading") return editor.insertAtCursor(readingList());
