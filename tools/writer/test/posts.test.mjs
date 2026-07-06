@@ -85,3 +85,15 @@ test("listPosts: returns folder/title/date, newest date first", async () => {
   assert.equal(list[0].title, "B");
   assert.equal(list[0].folder, "2_bb");
 });
+
+test("listPosts: formats YAML Date objects as ISO yyyy-mm-dd and sorts correctly", async () => {
+  const root = await tempContent();
+  const a = await createPost(root, { title: "Older", slug: "older" });
+  await savePost(root, a.folder, { data: { title: "Older", date: new Date("2026-01-19T00:00:00Z") }, body: "" });
+  const b = await createPost(root, { title: "Newer", slug: "newer" });
+  await savePost(root, b.folder, { data: { title: "Newer", date: new Date("2026-03-01T00:00:00Z") }, body: "" });
+  const list = await listPosts(root);
+  assert.equal(list[0].title, "Newer");
+  assert.equal(list[0].date, "2026-03-01");
+  assert.equal(list[1].date, "2026-01-19");
+});

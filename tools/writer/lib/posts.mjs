@@ -73,6 +73,13 @@ export async function savePost(contentRoot, folder, { data, body }) {
   await writeFile(file, md, "utf8");
 }
 
+// gray-matter 会把未加引号的 YAML 日期解析成 Date 对象；统一格式化成 ISO yyyy-mm-dd。
+function formatDate(d) {
+  if (!d) return "";
+  if (d instanceof Date) return d.toISOString().slice(0, 10);
+  return String(d).slice(0, 10);
+}
+
 // 列出所有 moments 项目，按 date 降序。
 export async function listPosts(contentRoot) {
   const folders = await listMomentFolders(contentRoot);
@@ -83,7 +90,7 @@ export async function listPosts(contentRoot) {
       posts.push({
         folder,
         title: data.title ?? folder,
-        date: data.date ? String(data.date).slice(0, 10) : "",
+        date: formatDate(data.date),
       });
     } catch {
       // 没有 index.md 的目录（如 assests）跳过
