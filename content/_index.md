@@ -66,7 +66,10 @@ sections:
         folders:
           - news
     design:
-      view: compact
+      # Custom vertical-timeline view (layouts/partials/views/news-timeline.html).
+      # Note: the previous `compact` view does not exist in this theme version
+      # and silently fell back to `card`.
+      view: news-timeline
       columns: '1'
       spacing:
         padding: ['20px', 0, '20px', 0]

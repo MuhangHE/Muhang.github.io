@@ -1,0 +1,32 @@
+{{/* Custom block: moments-list
+     A year-grouped reading list. The theme's collection block silently ignores
+     `group_by`, so grouping is done here with GroupByDate (years descending,
+     items date-descending within each year — nothing is hard-coded). */}}
+{{ $page := .wcPage }}
+{{ $block := .wcBlock }}
+
+{{ $folders := $block.content.filters.folders | default (slice "moments") }}
+{{ $pages := where site.RegularPages "Section" "in" $folders }}
+
+<div class="hb-moments">
+  {{ with $block.content.title }}
+    <div class="hb-section-label">{{ . | emojify | $page.RenderString }}</div>
+  {{ end }}
+
+  {{ range $pages.GroupByDate "2006" }}
+    <h2 class="hb-year">{{ .Key }}</h2>
+    <div class="hb-moment-group">
+      {{ range .Pages }}
+        <a class="hb-moment" href="{{ .RelPermalink }}">
+          <div class="hb-moment-main">
+            <div class="hb-moment-title">{{ .Title }}</div>
+            {{ with (.Params.summary | default .Summary) }}
+              <div class="hb-moment-quote">{{ . | plainify | chomp }}</div>
+            {{ end }}
+          </div>
+          <time class="hb-moment-date" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006 · 01 · 02" }}</time>
+        </a>
+      {{ end }}
+    </div>
+  {{ end }}
+</div>

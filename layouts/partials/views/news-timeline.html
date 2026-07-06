@@ -1,0 +1,9 @@
+{{/* Vertical timeline item, used by the collection block via `design.view: news-timeline`. */}}
+{{ $item := .item }}
+<article class="hb-tl-item">
+  <time class="hb-tl-date" datetime="{{ $item.Date.Format "2006-01-02" }}">{{ $item.Date.Format "2006 · 01 · 02" }}</time>
+  <h3 class="hb-tl-title"><a href="{{ $item.RelPermalink }}">{{ $item.Title }}</a></h3>
+  {{ with ($item.Params.summary | default $item.Summary) }}
+    <p class="hb-tl-summary">{{ . | plainify | chomp }}</p>
+  {{ end }}
+</article>
