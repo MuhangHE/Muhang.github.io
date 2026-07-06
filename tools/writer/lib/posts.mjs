@@ -1,4 +1,4 @@
-import { readdir, mkdir, writeFile, access, readFile } from "node:fs/promises";
+import { readdir, mkdir, writeFile, readFile } from "node:fs/promises";
 import { join } from "node:path";
 import matter from "gray-matter";
 
@@ -43,12 +43,6 @@ export async function createPost(contentRoot, { title, slug }) {
   const n = nextPrefix(folders);
   const folder = `${n}_${slug}`;
   const dir = join(contentRoot, MOMENTS, folder);
-  try {
-    await access(dir);
-    throw new Error(`folder already exists: ${folder}`);
-  } catch (err) {
-    if (err.code !== "ENOENT") throw err;
-  }
   await mkdir(dir, { recursive: true });
   const data = {
     title,
