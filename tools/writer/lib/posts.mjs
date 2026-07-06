@@ -78,3 +78,23 @@ export async function savePost(contentRoot, folder, { data, body }) {
   const md = matter.stringify(body ?? "", data ?? {});
   await writeFile(file, md, "utf8");
 }
+
+// 列出所有 moments 项目，按 date 降序。
+export async function listPosts(contentRoot) {
+  const folders = await listMomentFolders(contentRoot);
+  const posts = [];
+  for (const folder of folders) {
+    try {
+      const { data } = await readPost(contentRoot, folder);
+      posts.push({
+        folder,
+        title: data.title ?? folder,
+        date: data.date ? String(data.date).slice(0, 10) : "",
+      });
+    } catch {
+      // 没有 index.md 的目录（如 assests）跳过
+    }
+  }
+  posts.sort((x, y) => (y.date > x.date ? 1 : y.date < x.date ? -1 : 0));
+  return posts;
+}

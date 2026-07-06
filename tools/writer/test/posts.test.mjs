@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { nextPrefix, isValidSlug, createPost, readPost, savePost } from "../lib/posts.mjs";
+import { nextPrefix, isValidSlug, createPost, readPost, savePost, listPosts } from "../lib/posts.mjs";
 import { mkdtemp, readFile, mkdir } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
@@ -72,4 +72,16 @@ test("savePost: round-trips frontmatter values and body", async () => {
   assert.equal(post.data.summary, "沉迷做菜");
   assert.deepEqual(post.data.tags, ["周报"]);
   assert.match(post.body, /正文内容/);
+});
+
+test("listPosts: returns folder/title/date, newest date first", async () => {
+  const root = await tempContent();
+  const a = await createPost(root, { title: "A", slug: "aa" });
+  await savePost(root, a.folder, { data: { title: "A", date: "2026-01-01" }, body: "" });
+  const b = await createPost(root, { title: "B", slug: "bb" });
+  await savePost(root, b.folder, { data: { title: "B", date: "2026-03-01" }, body: "" });
+  const list = await listPosts(root);
+  assert.equal(list.length, 2);
+  assert.equal(list[0].title, "B");
+  assert.equal(list[0].folder, "2_bb");
 });
