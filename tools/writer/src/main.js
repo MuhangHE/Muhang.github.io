@@ -6,13 +6,14 @@ import { photosGrid, bigImage, blockquote, readingList } from "./modules.js";
 
 let currentFolder = null;
 let saveTimer = null;
+let loading = false;
 const status = document.getElementById("save-status");
 
 const editor = createEditor(document.getElementById("editor"), { onChange: scheduleSave });
 onFormChange(scheduleSave);
 
 function scheduleSave() {
-  if (!currentFolder) return;
+  if (!currentFolder || loading) return;
   status.textContent = "编辑中…";
   clearTimeout(saveTimer);
   saveTimer = setTimeout(save, 600);
@@ -29,11 +30,15 @@ async function save() {
 }
 
 async function openPost(folder) {
+  clearTimeout(saveTimer);
+  if (currentFolder && currentFolder !== folder) await save();
   currentFolder = folder;
   const post = await api.readPost(folder);
   if (folder !== currentFolder) return;
+  loading = true;
   writeForm(post.data);
   editor.setValue(post.body ?? "");
+  loading = false;
   showPreview(folder);
   status.textContent = "已保存";
 }
