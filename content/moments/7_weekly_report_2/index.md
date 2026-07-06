@@ -29,19 +29,11 @@ Zoom review时，每一页PPT老板都详尽审阅，包括文本间隙处等空
 ## SPIE报告
 
 在SPIE完成了人生中第一次会议演讲。
-<figure style="text-align:center; margin: 2em 0;">
-  <img src="../7_weekly_report_2/PPT首页.png"
-       width="500"
-       style="display:block; margin:0 auto; box-shadow:0 4px 8px rgba(0,0,0,0.2); border-radius:8px;"
-       alt="alt text" />
-</figure>
 
-<figure style="text-align:center; margin: 2em 0;">
-  <img src="../7_weekly_report_2/SPIE演讲.png"
-       width="500"
-       style="display:block; margin:0 auto; box-shadow:0 4px 8px rgba(0,0,0,0.2); border-radius:8px;"
-       alt="alt text" />
-</figure>
+![SPIE 汇报 PPT 首页](PPT首页.png)
+
+![SPIE 演讲现场](SPIE演讲.png)
+
 会议前一小时非常紧张，但是好朋友Marian用心陪我聊天甚至主动提出和我排练让我觉得很暖心！上台后反而不紧张了。
 
 QA环节有缺陷，说实话俩提问者的问题第一遍我都没有听清楚。引导问题的过程不太礼貌。第一个提问者我回复过于直白，一句 sry,is your question about how we perform the apodization?应该先感谢，再说is your question about xxx。
@@ -54,40 +46,14 @@ QA环节有缺陷，说实话俩提问者的问题第一遍我都没有听清楚
 
 ## 生活
 
-买了铁锅，重新爱上做饭！已经学会酸辣土豆丝，双椒碎牛肉，炒油菜花
-<figure style="text-align:center; margin: 2em 0;">
-  <img src="../7_weekly_report_2/小炒黄牛肉.png"
-       width="500"
-       style="display:block; margin:0 auto; box-shadow:0 4px 8px rgba(0,0,0,0.2); border-radius:8px;"
-       alt="alt text" />
-</figure>
-克利夫兰下了很恶劣的雪，学校因此提前关闭，但是由于办公软件安装在学校电脑上，只能去学校。在车里呆了二十分钟等玻璃上的冰化掉。
+买了铁锅，重新爱上做饭！已经学会酸辣土豆丝，双椒碎牛肉，炒油菜花。克利夫兰下了很恶劣的雪，学校因此提前关闭，但是由于办公软件安装在学校电脑上，只能去学校。在车里呆了二十分钟等玻璃上的冰化掉。
 
-<figure style="text-align:center; margin: 2em 0;">
-  <img src="../7_weekly_report_2/下雪.jpg"
-       width="500"
-       style="display:block; margin:0 auto; box-shadow:0 4px 8px rgba(0,0,0,0.2); border-radius:8px;"
-       alt="alt text" />
-</figure>
-
-
-出发去机场前最后摸一摸小猫的肥肚肚。
-<figure style="text-align:center; margin: 2em 0;">
-  <img src="../7_weekly_report_2/小猫肥肚肚.jpg"
-       width="500"
-       style="display:block; margin:0 auto; box-shadow:0 4px 8px rgba(0,0,0,0.2); border-radius:8px;"
-       alt="alt text" />
-</figure>
-
-
-室友发来的小猫照片，很霸道。
-
-<figure style="text-align:center; margin: 2em 0;">
-  <img src="../7_weekly_report_2/霸气小猫.jpg"
-       width="500"
-       style="display:block; margin:0 auto; box-shadow:0 4px 8px rgba(0,0,0,0.2); border-radius:8px;"
-       alt="alt text" />
-</figure>
+{{< photos cols="2" >}}
+{{< photo src="小炒黄牛肉.png" caption="铁锅初战：小炒黄牛肉" >}}
+{{< photo src="下雪.jpg" caption="提前关校的大雪天，在车里等冰化掉" >}}
+{{< photo src="小猫肥肚肚.jpg" caption="出发去机场前最后摸一摸小猫的肥肚肚" >}}
+{{< photo src="霸气小猫.jpg" caption="室友发来的小猫照片，很霸道" >}}
+{{< /photos >}}
 
 ### 输入
 

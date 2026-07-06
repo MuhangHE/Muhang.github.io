@@ -388,3 +388,330 @@ footer.container {
     margin-top: 4px;
   }
 }
+
+/* --------------------------------------------------------------------------
+   9. Moments article page (layouts/moments/single.html)
+   -------------------------------------------------------------------------- */
+main.hb-article {
+  max-width: calc(750px + 3rem);
+  padding-inline: 1.5rem;
+}
+
+.hb-article-title {
+  font-family: var(--font-serif);
+  font-size: 26px;
+  font-weight: 500;
+  line-height: 1.4;
+  color: var(--text);
+  text-transform: none;
+}
+
+.hb-article-meta {
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  letter-spacing: 0.02em;
+  color: var(--text-mut);
+}
+
+/* Featured image: content-width crop capped at 420px, never a full-screen
+   portrait. The template already serves a wide 25:14 rendition. */
+.hb-article-cover img {
+  width: 100%;
+  height: auto;
+  max-height: 420px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.hb-article-cover figcaption {
+  margin-top: 8px;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 12.5px;
+  color: var(--text-mut);
+  text-align: center;
+}
+
+/* Article prose: 16px sans body on --text-2, serif headings in normal case.
+   Widened to the 750px article measure (base .prose stays 680px elsewhere). */
+.hb-prose {
+  max-width: 750px;
+  font-size: 16px;
+  line-height: 1.7;
+  --tw-prose-body: var(--text-2);
+  --tw-prose-invert-body: var(--text-2);
+}
+.hb-prose :where(h1, h2, h3, h4, h5, h6) {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  text-transform: none;
+  letter-spacing: normal;
+  color: var(--text);
+}
+.hb-prose :where(h2) {
+  font-size: 20px;
+  margin-top: 30px;
+  margin-bottom: 14px;
+}
+.hb-prose :where(h3) {
+  font-size: 17px;
+  margin-top: 26px;
+  margin-bottom: 10px;
+}
+.hb-prose :where(h4, h5, h6) {
+  font-size: 16px;
+  margin-top: 22px;
+  margin-bottom: 8px;
+}
+.hb-prose a {
+  color: var(--accent-ink); /* --accent is 3.4:1 on --bg at 16px; ink passes AA */
+  font-weight: inherit;
+  text-decoration: none;
+}
+.hb-prose a:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.hb-prose :where(ul, ol) {
+  padding-left: 1.4em;
+}
+.hb-prose :where(li) {
+  margin-top: 0.35em;
+  margin-bottom: 0.35em;
+}
+.hb-prose blockquote {
+  font-size: 15px;
+  border-left-width: 2px;
+}
+
+/* Mode 1: single markdown images (theme's render-image hook). */
+.hb-prose figure {
+  margin: 1.8em auto;
+}
+.hb-prose figure img {
+  border-radius: 8px;
+  margin-inline: auto;
+  max-width: 100%;
+  height: auto;
+}
+.hb-prose figcaption {
+  margin-top: 8px;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 12.5px;
+  color: var(--text-mut);
+  text-align: center;
+}
+img.hb-zoomable {
+  cursor: zoom-in;
+}
+
+/* --------------------------------------------------------------------------
+   10. Mode 2: photo grid with captions ({{< photos >}} / {{< photo >}})
+   -------------------------------------------------------------------------- */
+.hb-prose .hb-photos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px 12px;
+  margin: 1.8em 0;
+}
+.hb-prose .hb-photos-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+.hb-prose .hb-photos-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+.hb-photos .hb-photo {
+  margin: 0;
+}
+.hb-photo a {
+  display: block;
+  overflow: hidden;
+  border-radius: 8px;
+  transition: box-shadow 0.15s ease;
+}
+.hb-photo img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: 8px;
+  margin: 0;
+  transition: transform 0.15s ease;
+}
+.hb-photo a:hover {
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent) 45%, transparent);
+}
+.hb-photo a:hover img {
+  transform: scale(1.03);
+}
+.hb-photos .hb-photo figcaption {
+  margin-top: 6px;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--text-mut);
+  text-align: left;
+}
+.hb-photo-date {
+  font-family: var(--font-mono);
+  font-style: normal;
+  font-size: 11px;
+  letter-spacing: 0.02em;
+  color: var(--accent);
+  margin-right: 2px;
+}
+.hb-photo figcaption a {
+  color: var(--accent-ink);
+  text-decoration: none;
+}
+.hb-photo figcaption a:hover {
+  text-decoration: underline;
+}
+@media (max-width: 640px) {
+  .hb-prose .hb-photos,
+  .hb-prose .hb-photos-2,
+  .hb-prose .hb-photos-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   11. Lightbox (assets/js/hb-lightbox.js)
+   The scrim is dark in both themes; fixed warm-light text keeps contrast.
+   -------------------------------------------------------------------------- */
+.hb-lb {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(15, 12, 9, 0.93);
+}
+.hb-lb.is-open {
+  display: flex;
+}
+html.hb-lb-lock {
+  overflow: hidden;
+}
+.hb-lb-figure {
+  margin: 0;
+  max-width: min(92vw, 1400px);
+  text-align: center;
+}
+.hb-lb-figure img {
+  max-width: 92vw;
+  max-height: 82vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 6px;
+}
+.hb-lb-figure figcaption {
+  margin-top: 12px;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 14px;
+  color: #cfc6ba;
+}
+.hb-lb button {
+  position: fixed;
+  z-index: 101;
+  background: none;
+  border: none;
+  padding: 12px;
+  color: #e8e1d6;
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.15s ease;
+}
+.hb-lb button:hover {
+  opacity: 1;
+}
+.hb-lb-close {
+  top: 12px;
+  right: 16px;
+  font-size: 22px;
+}
+.hb-lb-prev,
+.hb-lb-next {
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 46px;
+  font-family: var(--font-serif);
+}
+.hb-lb-prev {
+  left: 8px;
+}
+.hb-lb-next {
+  right: 8px;
+}
+
+/* --------------------------------------------------------------------------
+   12. Experiences: skill & hobby pills (blox/resume-skills.html)
+   Progress bars (.skills-wrapper/.skills-percent) are gone — the block
+   template no longer renders them.
+   -------------------------------------------------------------------------- */
+.hb-skills {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+@media (min-width: 1024px) {
+  .hb-skills {
+    flex-direction: row;
+  }
+  .hb-skills .hb-skill-group {
+    width: 50%;
+  }
+}
+.hb-skill-group-title {
+  font-family: var(--font-serif);
+  font-size: 19px;
+  font-weight: 500;
+  text-transform: none;
+  letter-spacing: normal;
+  color: var(--text);
+  margin-bottom: 14px;
+}
+.hb-skill-group-desc {
+  font-size: 14px;
+  color: var(--text-2);
+  margin-bottom: 12px;
+}
+.hb-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.skill-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 15px;
+  border-radius: 999px;
+  background-color: var(--hover);
+  border: 1px solid var(--line);
+  font-size: 14px;
+  color: var(--text);
+  text-transform: none;
+  letter-spacing: normal;
+  transition: color 0.15s ease, border-color 0.15s ease,
+    background-color 0.15s ease;
+}
+.skill-pill:hover {
+  color: var(--accent-ink);
+  border-color: var(--accent-ink);
+  background-color: color-mix(in srgb, var(--hover) 78%, var(--line));
+}
+.skill-pill-icon {
+  display: inline-flex;
+  color: var(--accent);
+}
+.skill-pill-icon svg {
+  height: 17px;
+  width: 17px;
+}

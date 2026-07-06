@@ -17,15 +17,8 @@ show_featured_image: false
 我和根苗正红的中国无产阶级家庭养育的子女一样，学了十八年一堆现在早已经记不起来的应试学科，走上了一条没有家庭背景人大多数都会走上的路，进入大学，不出意外，会在家庭和社会压力下被迫读个研究生，再进入工作。
 
 没劲。
-<figure style="text-align:center; margin: 2em 0;">
-  <img src="..\..\assests\1_ludeng.png"
-       width="500"
-       style="display:block; margin:0 auto; box-shadow:0 4px 8px rgba(0,0,0,0.2); border-radius:8px;"
-       alt="大一刷跑时路过学服，路灯照着月亮" />
-  <figcaption style="margin-top:0.6em; font-style:italic; color:#555;">
-    大一刷跑时路过学服，路灯照着月亮
-  </figcaption>
-</figure>
+
+![大一刷跑时路过学服，路灯照着月亮](../../assests/1_ludeng.png "大一刷跑时路过学服，路灯照着月亮")
 
 
 所以我羡慕掌控自己人生的角儿，或者说，已经在自己的领域干出事业的同龄人。我实在是见过太多了，各种官方公众号推选的精英分子，科研领域的翘楚天才，职场得志的仕途达人。
@@ -50,14 +43,7 @@ show_featured_image: false
 
 “在我遭遇的事情和我的回应之间有一个空间，在这个空间我享有自由和力量去选择自己的回应，我的成长和幸福取决于我的选择。”
 
-<figure style="text-align:center; margin: 2em 0;">
-  <img src="..\..\assests\1_2_headico.png"
-       width="500"
-       style="display:block; margin:0 auto; box-shadow:0 4px 8px rgba(0,0,0,0.2); border-radius:8px;"/>
-  <figcaption style="margin-top:0.6em; font-style:italic; color:#555;">
-    当过一段时间头像，看着星空
-  </figcaption>
-</figure>
+![当过一段时间头像，看着星空](../../assests/1_2_headico.png "当过一段时间头像，看着星空")
 
 我像被打捞起来一样，拼命抓住这句话给我的感受：刺激和回应之中存在一个空间，我的能力，成长将被滞留于其中的被我把控的力量定义。
 
@@ -75,14 +61,7 @@ show_featured_image: false
 
 不过这句话带给我的奇妙魔力就在于，我变得不那么急躁了。
 
-<figure style="text-align:center; margin: 2em 0;">
-  <img src="..\..\assests\1_3_minecraft.png"
-       width="500"
-       style="display:block; margin:0 auto; box-shadow:0 4px 8px rgba(0,0,0,0.2); border-radius:8px;"
-        />
-  <figcaption style="margin-top:0.6em; font-style:italic; color:#555;">
-    寝室里点亮的Minecraft火把
-</figure>
+![寝室里点亮的Minecraft火把](../../assests/1_3_minecraft.png "寝室里点亮的Minecraft火把")
 
 我知道我处于一个回应的阶段，这个阶段我调整自己尽量少受刺激带给我的负面影响，我自由地掌控着我的力量，我有力地挥舞着拳头砸向糟蹋我美好十九岁的破烂玩意儿。 
 

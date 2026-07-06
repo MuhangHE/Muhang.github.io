@@ -5,8 +5,8 @@ summary: 沉迷做菜
 authors:
 - admin
 tags:
-- 周报
-- show_featured_image: false
+  - 周报
+show_featured_image: false
 ---
 
 ## OpenClaw
@@ -29,111 +29,23 @@ tags:
 
 目前的生活节奏允许我晚上六点到八点回家烹饪，然后再继续工作。因为铁锅口深导热快，炒菜带劲，最近晚上下班回家都热情满满地想要尝试新菜品，这一周确实是沉迷在烹饪的艺术里无法自拔。
 
-- 2/1 [ 豆瓣鱼](https://broadcast-channel-muhang.vercel.app/posts/88) 没想到第一次做很成功！
+{{< photos cols="3" >}}
+{{< photo src="image.png" caption="2/1 [豆瓣鱼](https://broadcast-channel-muhang.vercel.app/posts/88) 没想到第一次做很成功！" >}}
+{{< photo src="image-3.png" caption="2/1 [烤鱼](https://broadcast-channel-muhang.vercel.app/posts/87) YYtime 烤鱼！" >}}
+{{< photo src="image-4.png" caption="2/1 [蒜蓉黄油虾](https://broadcast-channel-muhang.vercel.app/posts/84) 加了酱会好吃很多" >}}
+{{< photo src="image-5.png" caption="2/1 [蛋炒饭](https://broadcast-channel-muhang.vercel.app/posts/83)" >}}
+{{< photo src="image-6.png" caption="1/31 [圣地亚哥小酒吧](https://broadcast-channel-muhang.vercel.app/posts/81) 氛围超级棒，感谢Adam精选" >}}
+{{< photo src="image-2.png" caption="1/31 [雪碧被冻爆](https://broadcast-channel-muhang.vercel.app/posts/80) 可恶的克利夫兰天气" >}}
+{{< photo src="image-7.png" caption="1/31 [小猫的最新睡觉地点](https://broadcast-channel-muhang.vercel.app/posts/78)" >}}
+{{< photo src="image-8.png" caption="1/31 小猫的最新睡觉地点，换个角度" >}}
+{{< photo src="image-9.png" caption="1/31 [葱香鸡蛋](https://broadcast-channel-muhang.vercel.app/posts/76) 没啥葱香味，油倒是加了很多" >}}
+{{< photo src="image-10.png" caption="1/29 [小肥猫最近的新趴点](https://broadcast-channel-muhang.vercel.app/posts/61)" >}}
+{{< photo src="image-1.png" caption="1/29 [土豆炒肉](https://broadcast-channel-muhang.vercel.app/posts/59) 腌制肉片的时候不该加鸡蛋，炒出来有很多小渣渣" >}}
+{{< /photos >}}
 
-<figure style="text-align:center; margin: 2em 0;">
-  <img src="image.png"
-       width="500"
-       style="display:block; margin:0 auto; box-shadow:0 4px 8px rgba(0,0,0,0.2); border-radius:8px;"
-       alt="alt text" />
-</figure>
-
-- 2/1 [烤鱼](https://broadcast-channel-muhang.vercel.app/posts/87)  
-  YYtime 烤鱼！
-
-<figure style="text-align:center; margin: 2em 0;">
-  <img src="image-3.png"
-       width="500"
-       style="display:block; margin:0 auto; box-shadow:0 4px 8px rgba(0,0,0,0.2); border-radius:8px;"
-       alt="alt text" />
-</figure>
-
-- 2/1 [蒜蓉黄油虾，加了酱会好吃很多](https://broadcast-channel-muhang.vercel.app/posts/84)
-
-<figure style="text-align:center; margin: 2em 0;">
-  <img src="image-4.png"
-       width="500"
-       style="display:block; margin:0 auto; box-shadow:0 4px 8px rgba(0,0,0,0.2); border-radius:8px;"
-       alt="alt text" />
-</figure>
-
-- 2/1 [蛋炒饭](https://broadcast-channel-muhang.vercel.app/posts/83)
-
-<figure style="text-align:center; margin: 2em 0;">
-  <img src="image-5.png"
-       width="500"
-       style="display:block; margin:0 auto; box-shadow:0 4px 8px rgba(0,0,0,0.2); border-radius:8px;"
-       alt="alt text" />
-</figure>
-
-- 1/31 [圣地亚哥小酒吧](https://broadcast-channel-muhang.vercel.app/posts/81)  
-  氛围超级棒，感谢Adam精选
-
-<figure style="text-align:center; margin: 2em 0;">
-  <img src="image-6.png"
-       width="500"
-       style="display:block; margin:0 auto; box-shadow:0 4px 8px rgba(0,0,0,0.2); border-radius:8px;"
-       alt="alt text" />
-</figure>
-
-- 1/31 [雪碧被冻爆](https://broadcast-channel-muhang.vercel.app/posts/80)
-
-<figure style="text-align:center; margin: 2em 0;">
-  <img src="image-2.png"
-       width="500"
-       style="display:block; margin:0 auto; box-shadow:0 4px 8px rgba(0,0,0,0.2); border-radius:8px;"
-       alt="alt text" />
-</figure>
-
-  可恶的克利夫兰天气
-
-- 1/31 [小猫的最新睡觉地点](https://broadcast-channel-muhang.vercel.app/posts/78)
-
-<figure style="text-align:center; margin: 2em 0;">
-  <img src="image-7.png"
-       width="500"
-       style="display:block; margin:0 auto; box-shadow:0 4px 8px rgba(0,0,0,0.2); border-radius:8px;"
-       alt="alt text" />
-</figure>
-
-<figure style="text-align:center; margin: 2em 0;">
-  <img src="image-8.png"
-       width="500"
-       style="display:block; margin:0 auto; box-shadow:0 4px 8px rgba(0,0,0,0.2); border-radius:8px;"
-       alt="alt text" />
-</figure>
+没拍照片的：
 
 - 1/31 [黄油虾尝试](https://broadcast-channel-muhang.vercel.app/posts/77)
-
-- 1/31 [葱香鸡蛋](https://broadcast-channel-muhang.vercel.app/posts/76)  
-  没啥葱香味，油倒是加了很多
-
-<figure style="text-align:center; margin: 2em 0;">
-  <img src="image-9.png"
-       width="500"
-       style="display:block; margin:0 auto; box-shadow:0 4px 8px rgba(0,0,0,0.2); border-radius:8px;"
-       alt="alt text" />
-</figure>
-
-- 1/29 [小肥猫最近的新趴点](https://broadcast-channel-muhang.vercel.app/posts/61)
-
-<figure style="text-align:center; margin: 2em 0;">
-  <img src="image-10.png"
-       width="500"
-       style="display:block; margin:0 auto; box-shadow:0 4px 8px rgba(0,0,0,0.2); border-radius:8px;"
-       alt="alt text" />
-</figure>
-
-- 1/29 [土豆炒肉](https://broadcast-channel-muhang.vercel.app/posts/59)  
-  腌制肉片的时候不该加鸡蛋，炒出来有很多小渣渣
-
-<figure style="text-align:center; margin: 2em 0;">
-  <img src="image-1.png"
-       width="500"
-       style="display:block; margin:0 auto; box-shadow:0 4px 8px rgba(0,0,0,0.2); border-radius:8px;"
-       alt="alt text" />
-</figure>
-
 - 1/28 [小猫清晨谄媚](https://broadcast-channel-muhang.vercel.app/posts/58)  
   他不是爱我，他只是饿了 😡😡😡
 

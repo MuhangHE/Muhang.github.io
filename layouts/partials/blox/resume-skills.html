@@ -1,0 +1,46 @@
+{{/* Local override of blox-tailwind's Skills block.
+     Replaces the icon + UPPERCASE name + progress-bar rows with pill tags:
+     the progress bars (.skills-wrapper/.skills-percent) and percentages are
+     dropped entirely. Data still comes from the author page's `skills` front
+     matter; `percent`/`color` fields are simply ignored if present.
+     Styles live in assets/css/custom.css (§ skill pills). */}}
+
+{{ $page := .wcPage }}
+{{ $block := .wcBlock }}
+{{ $author := $block.content.username | default "admin" }}
+
+{{ $person_page_path := (printf "/authors/%s" $author) }}
+{{ $person_page := site.GetPage $person_page_path }}
+{{ if not $person_page }}
+{{ errorf "Could not find an author page at `%s`. Please check the value of `author` in your Skill block and create an associated author page if one does not already exist. See https://docs.hugoblox.com/page-builder/#about " $person_page_path }}
+{{ end }}
+{{ $skills := $person_page.Params.skills }}
+
+<div class="flex flex-col items-center max-w-prose mx-auto gap-3 justify-center">
+  {{ with $block.content.title }}
+  <div class="mb-6 text-3xl">{{ . | markdownify | emojify }}</div>
+  {{ end }}
+  {{ with $block.content.text }}<p>{{ . | markdownify | emojify }}</p>{{ end }}
+</div>
+
+{{/* Layout lives in custom.css: the site loads the theme's prebuilt
+     `dist/wc.min.css`, which lacks responsive utilities like lg:flex-row,
+     so the two-column arrangement is done with the hb-skills classes. */}}
+<div class="hb-skills max-w-prose mx-auto px-6 md:px-0">
+  {{ range $skills }}
+  <div class="hb-skill-group">
+    <h3 class="hb-skill-group-title">{{ .name | markdownify | emojify }}</h3>
+    {{ with .description }}<p class="hb-skill-group-desc">{{ . | markdownify | emojify }}</p>{{ end }}
+    <div class="hb-pills">
+      {{ range .items }}
+      <span class="skill-pill">
+        {{- with .icon -}}
+        <span class="skill-pill-icon">{{ partial "functions/get_icon" (dict "name" . "attributes" `style="height:17px;width:17px"`) }}</span>
+        {{- end -}}
+        <span class="skill-pill-name">{{ .name | markdownify | emojify }}</span>
+      </span>
+      {{ end }}
+    </div>
+  </div>
+  {{ end }}
+</div>

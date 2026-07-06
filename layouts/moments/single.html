@@ -1,0 +1,92 @@
+{{ define "main" }}
+{{/* Local override of blox-tailwind `_default/single.html`, scoped to the
+     `moments` section only. Changes vs the module template:
+     - reading column narrowed to 750px (`hb-article`, styled in custom.css)
+     - meta line gets a class hook (`hb-article-meta`) for mono styling
+     - featured image is cropped/capped instead of rendered full height
+     - drops `lg:prose-xl` and the publication/event metadata block, which
+       moments pages never use */}}
+
+<div class="mx-auto flex max-w-screen-xl">
+  {{ partial "components/sidebar.html" (dict "context" . "no_sidebar" true) }}
+  {{ partial "components/toc.html" . }}
+  <article class="w-full break-words flex min-h-[calc(100vh-var(--navbar-height))] min-w-0 justify-center pb-8 pr-[calc(env(safe-area-inset-right)-1.5rem)]">
+    <main class="w-full min-w-0 hb-article pt-4">
+
+      {{ if .Params.show_breadcrumb }}
+      <div class="mb-4">
+        {{ partial "components/breadcrumb.html" . }}
+      </div>
+      {{ end }}
+
+      <h1 class="hb-article-title mt-2">
+        {{- .Title -}}
+      </h1>
+
+      <div class="mt-3 mb-10">
+        <div class="hb-article-meta flex items-center flex-wrap gap-y-2">
+          {{- if .Date | and (not .Params.hide_date) -}}
+          <span class="mr-1">{{- .Date | time.Format (site.Params.locale.date_format | default ":date_long") -}}</span>
+          {{- if .Params.authors }}<span class="mx-1">&middot;</span>{{ end -}}
+          {{- end -}}
+
+          {{ $taxonomy := "authors" }}
+          {{ range $i, $author_obj := (.GetTerms $taxonomy) }}
+            {{ $author_page := $author_obj.Page }}
+            {{ $avatar := ($author_page.Resources.ByType "image").GetMatch "*avatar*" }}
+            {{- if and $i (not $avatar) }}<span class="mr-1">,</span>{{ end -}}
+            {{ with $author_page.Params.website }}
+            <a href="{{.}}" target="_blank" rel="noreferrer">
+            {{ end }}
+            <div class="group inline-flex items-center text-current gap-x-1.5 mx-1">
+              {{ with $avatar }}
+              {{ $avatar = $avatar.Process "Fill 50x50 Center webp" }}
+              <img src="{{ $avatar.RelPermalink }}" alt="{{ $author_page.Title }}" class="inline-block h-4 w-4 rounded-full border border-current" loading="lazy" />
+              {{ end }}
+              <div {{if $author_page.Params.website}}class="group-hover:underline"{{end}}>{{ $author_page.Title }}</div>
+            </div>
+            {{ with $author_page.Params.website }}
+            </a>
+            {{ end }}
+          {{ end }}
+
+          {{ if ne .Params.reading_time false }}
+          <span class="mx-1">&middot;</span>
+          <span class="mx-1">
+            {{ .ReadingTime }} {{ i18n "minute_read" }}
+          </span>
+          {{ end }}
+        </div>
+
+        <div class="mt-3">
+          {{ partial "page_links_div.html" . }}
+        </div>
+      </div>
+
+      {{ $featured := partial "functions/get_featured_image.html" . }}
+      {{ if and $featured (not .Params.image.preview_only) }}
+      {{/* Wide crop keeps the cover at content width without a full-height
+           portrait taking over the viewport; display height capped in CSS. */}}
+      {{ $image := $featured.Fill "1500x840 Smart" }}
+      {{ if ne $image.MediaType.SubType "gif" }}{{ $image = $image.Process "webp" }}{{ end }}
+      <div class="hb-article-cover mb-12">
+        <img src="{{ $image.RelPermalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}" alt="{{ with $.Params.image.alt_text }}{{.}}{{ else }}{{ $.Title }}{{ end }}" loading="eager" />
+        {{ with $.Params.image.caption }}<figcaption>{{ . | markdownify | emojify }}</figcaption>{{ end }}
+      </div>
+      {{ end }}
+
+      <div class="prose hb-prose dark:prose-invert">
+        {{ .Content }}
+      </div>
+
+      {{ partial "components/last-edited.html" . }}
+
+      <div class="prose hb-prose dark:prose-invert mt-5">
+        {{ .Scratch.Set "invert_pager" true }}
+        {{ partial "page_footer" . }}
+      </div>
+
+    </main>
+  </article>
+</div>
+{{ end }}

@@ -81,32 +81,18 @@ skills:
   - name: Technical Skills
     items:
       - name: Python
-        description: ''
-        percent: 80
         icon: devicon/python
       - name: Matlab
-        description: ''
-        percent: 100
         icon: devicon/matlab
       - name: PyTorch
-        description: ''
-        percent: 30
         icon: devicon/pytorch
   - name: Hobbies
-    color: '#eeac02'
-    color_border: '#f0bf23'
     items:
       - name: Cats
-        description: ''
-        percent: 100
         icon: cat
       - name: Electric Guitar
-        description: ''
-        percent: 100
         icon: "custom/guitar-solid"
       - name: Photography
-        description: ''
-        percent: 80
         icon: camera
 ---
 

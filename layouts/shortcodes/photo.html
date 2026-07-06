@@ -1,0 +1,39 @@
+{{/* One photo inside a `photos` grid shortcode (also usable standalone).
+     Params:
+       src     — image filename in the page bundle (page resource)
+       caption — optional; a leading date like "2/1" is styled separately
+       alt     — optional; falls back to the plain-text caption
+     Thumbnails are 3:4 crops generated with Hugo image processing; the link
+     points at a web-sized original for the lightbox (hb-lightbox.js groups
+     anchors by data-lightbox). */}}
+{{- $src := .Get "src" -}}
+{{- $caption := .Get "caption" | default "" -}}
+{{- $img := (.Page.Resources.ByType "image").GetMatch $src -}}
+{{- if not $img -}}
+  {{- errorf "photo shortcode: image %q not found in bundle of %q (%s)" $src .Page.File.Path .Position -}}
+{{- else -}}
+{{- $album := "" -}}
+{{- with .Parent -}}
+  {{- $album = .Get "album" | default (printf "photos-%d" .Ordinal) -}}
+{{- else -}}
+  {{- $album = printf "photo-%d" .Ordinal -}}
+{{- end -}}
+{{- $full := $img.Fit "1600x1600 webp q90" -}}
+{{- $thumb := $img.Fill "480x640 Smart webp q85" -}}
+{{- $captionText := trim ($caption | markdownify | plainify) " \r\n\t" -}}
+{{- $alt := .Get "alt" | default ($captionText | default "photo") -}}
+{{- $date := "" -}}
+{{- $rest := $caption -}}
+{{- with findRE `^\d{1,2}/\d{1,2}\s` $caption 1 -}}
+  {{- $date = trim (index . 0) " \r\n\t" -}}
+  {{- $rest = trim (strings.TrimPrefix (index . 0) $caption) " \r\n\t" -}}
+{{- end -}}
+<figure class="hb-photo">
+  <a href="{{ $full.RelPermalink }}" data-lightbox="{{ $album }}" {{ with $captionText }}data-caption="{{ . }}"{{ end }} aria-label="{{ $alt }}">
+    <img src="{{ $thumb.RelPermalink }}" width="{{ $thumb.Width }}" height="{{ $thumb.Height }}" alt="{{ $alt }}" loading="lazy" />
+  </a>
+  {{- with $caption -}}
+  <figcaption>{{ with $date }}<span class="hb-photo-date">{{ . }}</span> {{ end }}{{ $rest | markdownify | emojify }}</figcaption>
+  {{- end -}}
+</figure>
+{{- end -}}

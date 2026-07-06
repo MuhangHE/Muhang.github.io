@@ -30,12 +30,7 @@ show_featured_image: false
 
 《犴达罕》中的维加是一个酗酒成性的人，禁猎后就撕扯于现代文明与死去的狩猎文化里，活在半醉半醒之下。维加在醉酒后曾说下：“我从弓与箭的文化环球，来到了原子弹的时代，他们把我抛出去，我们的文化正在消失，语言和制度也在消失，还有四个猎民青年，被带上了法庭，这是对狩猎文化末日的审判，审判吧，审判。”
 
-<figure style="text-align:center; margin: 2em 0;">
-  <img src="..\..\assests\3_where_are_dear_going.png"
-       width="700"
-       style="display:block; margin:0 auto; box-shadow:0 4px 8px rgba(0,0,0,0.2); border-radius:8px;"
-       alt="大一刷跑时路过学服，路灯照着月亮" />
-</figure>
+![鹿在何方](../../assests/3_where_are_dear_going.png)
 
 《犴达罕》里面反映出来的鄂温克族文化面临的危机，是让人心痛的。每一种文化的消失，都代表着一个民族过去所坚守的精神被遗忘，更何况，鄂温克族的文化是被迫遗忘。
 

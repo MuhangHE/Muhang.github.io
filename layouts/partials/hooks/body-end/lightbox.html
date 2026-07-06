@@ -1,0 +1,6 @@
+{{/* Lightbox for the photos shortcode and data-zoomable markdown images.
+     This blox-tailwind version emits `data-zoomable` in its image render hook
+     but ships no JS for it, so this tiny script (~3 KB) covers both cases.
+     Styles live in assets/css/custom.css (§ lightbox). */}}
+{{ $js := resources.Get "js/hb-lightbox.js" | minify | fingerprint }}
+<script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" defer></script>

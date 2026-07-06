@@ -1,0 +1,16 @@
+{{/* Grid photo gallery with per-photo captions.
+     Usage (angle-bracket shortcode syntax):
+       photos cols="3"
+         photo src="image.png" caption="2/1 豆瓣鱼 第一次很成功"
+         …
+       /photos
+     cols: 2 | 3 | 4 (default 3); drops to 2 columns under 640px via CSS.
+     album: optional lightbox group name; defaults to one group per shortcode
+     instance so arrow keys cycle within this grid only. */}}
+{{- $cols := .Get "cols" | default "3" -}}
+{{- if not (in (slice "2" "3" "4") $cols) -}}
+  {{- errorf "photos shortcode: cols must be 2, 3 or 4, got %q (%s)" $cols .Position -}}
+{{- end -}}
+<div class="hb-photos hb-photos-{{ $cols }}">
+  {{- .Inner -}}
+</div>
