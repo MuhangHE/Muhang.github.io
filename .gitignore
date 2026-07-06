@@ -10,3 +10,7 @@ _vendor/
 .DS_Store
 desktop.ini
 Thumbs.db
+
+# local markdown writer tool
+tools/writer/node_modules/
+tools/writer/dist/

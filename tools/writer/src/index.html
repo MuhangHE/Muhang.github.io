@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="zh">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Muhang 写作器</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <header id="topbar">
+      <select id="project-select"></select>
+      <button id="new-project">新建</button>
+      <span id="save-status"></span>
+      <button id="publish">发布</button>
+    </header>
+    <main id="workspace">
+      <section id="left">
+        <div id="frontmatter">
+          <label>标题 <input id="f-title" type="text" /></label>
+          <label>心情 <input id="f-summary" type="text" /></label>
+          <label>日期 <input id="f-date" type="date" /></label>
+          <label>标签 <input id="f-tags" type="text" placeholder="逗号分隔" /></label>
+          <label>封面 <input id="f-cover" type="file" accept="image/*" /></label>
+        </div>
+        <div id="toolbar">
+          <button data-module="photos">图片网格</button>
+          <button data-module="bigimage">大图</button>
+          <button data-module="quote">引用</button>
+          <button data-module="reading">清单</button>
+        </div>
+        <div id="editor"></div>
+      </section>
+      <section id="right">
+        <iframe id="preview" title="预览"></iframe>
+      </section>
+    </main>
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>
