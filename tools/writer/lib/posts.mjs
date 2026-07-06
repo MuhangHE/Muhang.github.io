@@ -70,3 +70,11 @@ export async function readPost(contentRoot, folder) {
   const parsed = matter(raw);
   return { data: parsed.data, body: parsed.content };
 }
+
+// 把 frontmatter(data) 与正文(body) 合成整篇写回。
+// 注意：YAML 注释不保留（可接受），字段值无损往返。
+export async function savePost(contentRoot, folder, { data, body }) {
+  const file = join(contentRoot, MOMENTS, folder, "index.md");
+  const md = matter.stringify(body ?? "", data ?? {});
+  await writeFile(file, md, "utf8");
+}

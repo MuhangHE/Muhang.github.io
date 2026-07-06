@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { nextPrefix, isValidSlug, createPost, readPost } from "../lib/posts.mjs";
+import { nextPrefix, isValidSlug, createPost, readPost, savePost } from "../lib/posts.mjs";
 import { mkdtemp, readFile, mkdir } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
@@ -58,4 +58,18 @@ test("readPost: splits frontmatter and body", async () => {
   const post = await readPost(root, folder);
   assert.equal(post.data.title, "标题");
   assert.equal(typeof post.body, "string");
+});
+
+test("savePost: round-trips frontmatter values and body", async () => {
+  const root = await tempContent();
+  const { folder } = await createPost(root, { title: "t", slug: "save-me" });
+  await savePost(root, folder, {
+    data: { title: "新标题", summary: "沉迷做菜", date: "2026-02-01", authors: ["admin"], tags: ["周报"], show_featured_image: false },
+    body: "## 小节\n\n正文内容",
+  });
+  const post = await readPost(root, folder);
+  assert.equal(post.data.title, "新标题");
+  assert.equal(post.data.summary, "沉迷做菜");
+  assert.deepEqual(post.data.tags, ["周报"]);
+  assert.match(post.body, /正文内容/);
 });
