@@ -7,3 +7,8 @@ export function nextPrefix(folderNames) {
   }
   return max + 1;
 }
+
+// slug 只允许小写字母、数字、连字符、下划线，且非空。
+export function isValidSlug(slug) {
+  return /^[a-z0-9_-]+$/.test(slug);
+}
