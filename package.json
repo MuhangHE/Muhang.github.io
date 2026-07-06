@@ -1,0 +1,7 @@
+{
+  "name": "muhang-blog-tools",
+  "private": true,
+  "scripts": {
+    "write": "cd tools/writer && npm install && npm run build && npm start"
+  }
+}
