@@ -20,9 +20,12 @@
 - 新建项目：自动建 `content/moments/<N_slug>/index.md`
 - 表单管理：标题 / 心情(summary) / 日期 / 标签 / 封面(featured.*)
 - 工具栏插入：图片网格、大图、引用、阅读清单
-- 拖图入库：拖入编辑器自动复制进 bundle 并插入引用
+- 拖图/粘贴入库：拖入或 Ctrl+V 粘贴图片，自动复制进 bundle 并插入引用（截图自动命名为 `pasted-日期-时间`）
 - 自动保存 + 右侧真实 Hugo 预览热重载
 - 一键发布：git add/commit/push 到 main
+- 标签自动补全：基于既有文章的标签
+- 快捷键：`Ctrl+S` 立即保存，`Ctrl+B` 加粗，`Ctrl+I` 斜体
+- 深/浅主题切换（顶栏按钮，或 `?theme=light|dark`），左右分栏可拖动，均记忆在 localStorage
 
 ## 说明
 

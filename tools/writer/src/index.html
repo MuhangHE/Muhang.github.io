@@ -12,6 +12,10 @@
       <select id="project-select"></select>
       <button id="new-project" title="新建文章">＋ 新建</button>
       <span id="save-status"></span>
+      <button id="theme-toggle" title="切换深浅主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="3.2"/><path d="M8 1v1.8M8 13.2V15M1 8h1.8M13.2 8H15M3.05 3.05l1.27 1.27M11.68 11.68l1.27 1.27M12.95 3.05l-1.27 1.27M4.32 11.68l-1.27 1.27"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" aria-hidden="true"><path d="M13.5 9.5A6 6 0 0 1 6.5 2.5 6 6 0 1 0 13.5 9.5z"/></svg>
+      </button>
       <button id="publish">发布</button>
     </header>
     <main id="workspace">
@@ -27,6 +31,7 @@
           </label>
         </div>
         <div id="editor"></div>
+        <div id="drop-hint">松手插入图片</div>
         <div id="toolbar">
           <button data-module="photos" title="插入图片网格">
             <svg viewBox="0 0 16 16" aria-hidden="true"><rect x="1.5" y="1.5" width="5.2" height="5.2" rx="1"/><rect x="9.3" y="1.5" width="5.2" height="5.2" rx="1"/><rect x="1.5" y="9.3" width="5.2" height="5.2" rx="1"/><rect x="9.3" y="9.3" width="5.2" height="5.2" rx="1"/></svg>
@@ -42,6 +47,7 @@
           </button>
         </div>
       </section>
+      <div id="splitter" title="拖动调整分栏"></div>
       <section id="right">
         <iframe id="preview" title="预览"></iframe>
       </section>

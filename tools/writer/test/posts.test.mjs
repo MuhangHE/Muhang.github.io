@@ -86,6 +86,17 @@ test("listPosts: returns folder/title/date, newest date first", async () => {
   assert.equal(list[0].folder, "2_bb");
 });
 
+test("listPosts: includes tags array (empty when missing)", async () => {
+  const root = await tempContent();
+  const a = await createPost(root, { title: "A", slug: "aa" });
+  await savePost(root, a.folder, { data: { title: "A", date: "2026-01-01", tags: ["周报", "生活"] }, body: "" });
+  const b = await createPost(root, { title: "B", slug: "bb" });
+  await savePost(root, b.folder, { data: { title: "B", date: "2026-03-01" }, body: "" });
+  const list = await listPosts(root);
+  assert.deepEqual(list[0].tags, []);
+  assert.deepEqual(list[1].tags, ["周报", "生活"]);
+});
+
 test("listPosts: formats YAML Date objects as ISO yyyy-mm-dd and sorts correctly", async () => {
   const root = await tempContent();
   const a = await createPost(root, { title: "Older", slug: "older" });

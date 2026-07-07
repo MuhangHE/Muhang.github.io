@@ -91,6 +91,7 @@ export async function listPosts(contentRoot) {
         folder,
         title: data.title ?? folder,
         date: formatDate(data.date),
+        tags: Array.isArray(data.tags) ? data.tags : [],
       });
     } catch {
       // 没有 index.md 的目录（如 assests）跳过
