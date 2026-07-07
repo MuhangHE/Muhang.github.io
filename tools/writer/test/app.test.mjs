@@ -1,7 +1,7 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import { createApp } from "../app.mjs";
-import { mkdtemp, mkdir, readFile } from "node:fs/promises";
+import { mkdtemp, mkdir, readFile, writeFile, readdir } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 
@@ -97,6 +97,92 @@ test("POST /api/posts/:folder/images with no file -> 400, no crash", async () =>
       body: new FormData(),
     });
     assert.equal(res.status, 400);
+  } finally {
+    server.close();
+  }
+});
+
+test("folder param with path traversal -> 400", async () => {
+  const { base, server } = await startApp();
+  try {
+    // 裸 ".." 会被 fetch 在 URL 层规范化掉，这里测编码后仍能穿透到路由层的形式
+    for (const bad of ["a..b", "a%2Fb", "a%5Cb", "a%2F..%2Fb"]) {
+      const res = await fetch(`${base}/api/posts/${bad}`);
+      assert.equal(res.status, 400, bad);
+    }
+  } finally {
+    server.close();
+  }
+});
+
+test("cover: GET 404 when absent, GET/DELETE round-trip", async () => {
+  const { base, contentRoot, server } = await startApp();
+  try {
+    const dir = join(contentRoot, "moments", "1_x");
+    await mkdir(dir, { recursive: true });
+    let res = await fetch(`${base}/api/posts/1_x/cover`);
+    assert.equal(res.status, 404);
+
+    const fd = new FormData();
+    fd.append("file", new Blob([Buffer.from("IMG")]), "pic.png");
+    res = await fetch(`${base}/api/posts/1_x/cover`, { method: "POST", body: fd });
+    assert.equal(res.status, 200);
+
+    res = await fetch(`${base}/api/posts/1_x/cover`);
+    assert.equal(res.status, 200);
+    assert.equal(Buffer.from(await res.arrayBuffer()).toString(), "IMG");
+
+    res = await fetch(`${base}/api/posts/1_x/cover`, { method: "DELETE" });
+    assert.deepEqual(await res.json(), { removed: true });
+    res = await fetch(`${base}/api/posts/1_x/cover`);
+    assert.equal(res.status, 404);
+  } finally {
+    server.close();
+  }
+});
+
+test("images: GET list and single file, bad name -> 404", async () => {
+  const { base, contentRoot, server } = await startApp();
+  try {
+    const dir = join(contentRoot, "moments", "1_x");
+    await mkdir(dir, { recursive: true });
+    await writeFile(join(dir, "pic.png"), "PIC");
+    await writeFile(join(dir, "featured.png"), "F");
+
+    let res = await fetch(`${base}/api/posts/1_x/images`);
+    const list = await res.json();
+    assert.deepEqual(list.map((i) => i.name), ["pic.png"]);
+
+    res = await fetch(`${base}/api/posts/1_x/images/pic.png`);
+    assert.equal(res.status, 200);
+    assert.equal(Buffer.from(await res.arrayBuffer()).toString(), "PIC");
+
+    res = await fetch(`${base}/api/posts/1_x/images/nope.png`);
+    assert.equal(res.status, 404);
+    res = await fetch(`${base}/api/posts/1_x/images/..%2Findex.md`);
+    assert.equal(res.status, 404);
+  } finally {
+    server.close();
+  }
+});
+
+test("orphans: GET lists, DELETE removes", async () => {
+  const { base, contentRoot, server } = await startApp();
+  try {
+    const dir = join(contentRoot, "moments", "1_x");
+    await mkdir(dir, { recursive: true });
+    await writeFile(join(dir, "index.md"), "引用 used.png 的正文\n");
+    await writeFile(join(dir, "used.png"), "u");
+    await writeFile(join(dir, "orphan.png"), "o");
+
+    let res = await fetch(`${base}/api/posts/1_x/orphans`);
+    assert.deepEqual(await res.json(), ["orphan.png"]);
+
+    res = await fetch(`${base}/api/posts/1_x/orphans`, { method: "DELETE" });
+    assert.deepEqual(await res.json(), { removed: ["orphan.png"] });
+    const files = await readdir(dir);
+    assert.ok(!files.includes("orphan.png"));
+    assert.ok(files.includes("used.png"));
   } finally {
     server.close();
   }

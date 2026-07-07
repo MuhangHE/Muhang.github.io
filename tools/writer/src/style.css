@@ -180,7 +180,22 @@ body.resizing #splitter { background: var(--accent); }
 body.resizing { user-select: none; cursor: col-resize; }
 body.resizing iframe { pointer-events: none; }
 
-#right { flex: 1; min-width: 0; background: #fff; color-scheme: light; }
+/* 预览容器底色跟随主题：iframe 加载前/失败时不再在暗色 UI 里露白 */
+#right { position: relative; flex: 1; min-width: 0; background: var(--bg); }
+
+/* ---------- 专注模式：收起预览，编辑区限宽居中 ---------- */
+
+body.focus #splitter,
+body.focus #right { display: none; }
+
+body.focus #left { width: 100% !important; }
+
+body.focus #editor .cm-content {
+  max-width: 46rem;
+  margin: 0 auto;
+}
+
+body.focus #focus-toggle { color: var(--accent); }
 
 /* ---------- Frontmatter：单行细条 ---------- */
 
@@ -222,7 +237,7 @@ body.resizing iframe { pointer-events: none; }
 #f-date { width: 8.4rem; flex-shrink: 0; color: var(--text-dim); }
 #f-tags { flex: 1; }
 
-/* 封面：图标按钮，原生 file input 隐藏；已有封面时点亮 */
+/* 封面：图标按钮；已有封面时点亮，点击弹出管理菜单 */
 #cover-btn {
   display: inline-flex;
   align-items: center;
@@ -230,6 +245,8 @@ body.resizing iframe { pointer-events: none; }
   width: 1.85rem;
   height: 1.85rem;
   flex-shrink: 0;
+  border: none;
+  background: transparent;
   border-radius: var(--radius);
   color: var(--text-dim);
   cursor: pointer;
@@ -239,8 +256,6 @@ body.resizing iframe { pointer-events: none; }
 #cover-btn:hover { background: var(--field-hover); color: var(--text); }
 
 #cover-btn.has-cover { color: var(--accent); }
-
-#cover-btn input { display: none; }
 
 #cover-btn svg {
   width: 15px;
@@ -345,13 +360,159 @@ body.resizing iframe { pointer-events: none; }
 #toolbar svg circle { fill: currentColor; stroke: none; }
 #toolbar button[data-module="quote"] svg path { fill: currentColor; stroke: none; }
 
-/* ---------- Toast ---------- */
+/* 工具条右侧：字数 + 专注模式按钮 */
+#word-count {
+  margin-left: auto;
+  font-size: .72rem;
+  color: var(--text-faint);
+  white-space: nowrap;
+  user-select: none;
+}
 
-#toast {
+/* ---------- 编辑器内的 Hugo shortcode：淡化 + 等宽小字 ---------- */
+
+#editor .cm-shortcode,
+#editor .cm-shortcode * {
+  color: var(--text-faint) !important;
+  font-family: var(--font-mono);
+  font-size: .82em;
+  font-weight: 400;
+}
+
+/* ---------- 图片面板：横向缩略图条，点击插入引用 ---------- */
+
+#gallery {
+  flex-shrink: 0;
+  padding: .45rem .6rem .35rem;
+  background: var(--bg);
+  border-top: 1px solid var(--border);
+}
+
+#gallery[hidden] { display: none; }
+
+#gallery-items {
+  display: flex;
+  gap: .5rem;
+  overflow-x: auto;
+  padding-bottom: .15rem;
+}
+
+#gallery-items::-webkit-scrollbar { height: 8px; }
+#gallery-items::-webkit-scrollbar-thumb {
+  background: var(--border-soft);
+  border-radius: 99px;
+}
+#gallery-items::-webkit-scrollbar-track { background: transparent; }
+
+.gallery-item {
+  flex: 0 0 auto;
+  width: 5.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: .22rem;
+  padding: 0;
+  border: none;
+  background: transparent;
+  text-align: left;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 3.6rem;
+  object-fit: cover;
+  border-radius: var(--radius);
+  border: 1px solid var(--border-soft);
+  transition: border-color .12s, transform .12s;
+}
+
+.gallery-item:hover img {
+  border-color: var(--accent);
+  transform: translateY(-1px);
+}
+
+.gallery-item span {
+  font-size: .62rem;
+  color: var(--text-dim);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* 已被正文引用的图片：文件名前打勾 */
+.gallery-item.used span::before {
+  content: "✓ ";
+  color: var(--ok);
+}
+
+.gallery-empty {
+  font-size: .75rem;
+  color: var(--text-faint);
+  padding: .3rem 0;
+  white-space: nowrap;
+}
+
+#gallery-toggle.active { color: var(--accent); }
+
+/* ---------- 空状态（无文章时） ---------- */
+
+#empty-state {
+  position: absolute;
+  inset: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--panel);
+}
+
+#empty-state[hidden] { display: none; }
+
+#empty-state .empty-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .9rem;
+  color: var(--text-dim);
+  font-size: .9rem;
+}
+
+/* ---------- 预览占位（hugo server 不可用） ---------- */
+
+#preview-placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: .4rem;
+  background: var(--bg);
+  color: var(--text-dim);
+  font-size: .95rem;
+}
+
+#preview-placeholder .hint {
+  margin: 0;
+  font-size: .78rem;
+  color: var(--text-faint);
+}
+
+#preview-placeholder[hidden] { display: none; }
+
+/* ---------- Toast（可堆叠） ---------- */
+
+#toasts {
   position: fixed;
   right: 1rem;
   bottom: 3rem;
   z-index: 60;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: .4rem;
+}
+
+.toast {
   max-width: 22rem;
   padding: .55rem .9rem;
   border-radius: 8px;
@@ -362,13 +523,13 @@ body.resizing iframe { pointer-events: none; }
   box-shadow: var(--shadow);
   opacity: 0;
   transform: translateY(8px);
-  pointer-events: none;
+  cursor: pointer;
   transition: opacity .18s, transform .18s;
 }
 
-#toast.show { opacity: 1; transform: none; }
-#toast.ok { border-left-color: var(--ok); }
-#toast.error { border-left-color: var(--danger); }
+.toast.show { opacity: 1; transform: none; }
+.toast.ok { border-left-color: var(--ok); }
+.toast.error { border-left-color: var(--danger); }
 
 /* ---------- 弹层（新建文章） ---------- */
 
@@ -459,6 +620,62 @@ body.resizing iframe { pointer-events: none; }
 
 .btn-ghost:hover { background: var(--field-hover); }
 
+.btn-small { font-size: .75rem; padding: .25rem .7rem; }
+
+/* ---------- 发布确认弹层 ---------- */
+
+.dialog-publish { width: 26rem; }
+
+.dialog-note {
+  margin: 0 0 .5rem;
+  font-size: .78rem;
+  color: var(--text-dim);
+}
+
+.dialog-warn {
+  margin: 0 0 .4rem;
+  font-size: .78rem;
+  color: var(--danger);
+}
+
+.chg-list {
+  list-style: none;
+  margin: 0 0 .7rem;
+  padding: .35rem .5rem;
+  max-height: 9rem;
+  overflow: auto;
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius);
+  background: var(--field);
+  font-size: .76rem;
+}
+
+.chg-list li {
+  display: flex;
+  gap: .5rem;
+  align-items: baseline;
+  padding: .12rem 0;
+  min-width: 0;
+}
+
+.chg-badge {
+  flex-shrink: 0;
+  width: 1.5em;
+  text-align: center;
+  border-radius: 4px;
+  background: var(--border-soft);
+  color: var(--text-dim);
+  font-size: .68rem;
+}
+
+.chg-path {
+  font-family: var(--font-mono);
+  overflow-wrap: anywhere;
+  color: var(--text);
+}
+
+.orphan-block { margin-bottom: .7rem; }
+
 /* ---------- Popover（列数选择） ---------- */
 
 .popover {
@@ -483,6 +700,31 @@ body.resizing iframe { pointer-events: none; }
 }
 
 .popover button:hover { background: var(--field-hover); }
+
+/* ---------- 封面管理菜单 ---------- */
+
+.cover-menu {
+  flex-direction: column;
+  gap: .4rem;
+  padding: .4rem;
+  max-width: 15rem;
+}
+
+.cover-menu img {
+  display: block;
+  max-width: 100%;
+  max-height: 9rem;
+  object-fit: cover;
+  border-radius: var(--radius);
+}
+
+.cover-menu .cover-actions {
+  display: flex;
+  gap: .15rem;
+  justify-content: flex-end;
+}
+
+.cover-menu .danger { color: var(--danger); }
 
 /* ---------- 标签自动补全 ---------- */
 
@@ -515,4 +757,5 @@ body.resizing iframe { pointer-events: none; }
 
 /* ---------- 预览 ---------- */
 
-#preview { width: 100%; height: 100%; border: 0; background: #fff; }
+/* iframe 自身透明：加载前露出跟随主题的容器底色，加载后由站点页面自绘 */
+#preview { width: 100%; height: 100%; border: 0; background: transparent; }

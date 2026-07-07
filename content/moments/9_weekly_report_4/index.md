@@ -42,14 +42,8 @@ show_featured_image: false
 {{< photo src="image-10.png" caption="1/29 [小肥猫最近的新趴点](https://broadcast-channel-muhang.vercel.app/posts/61)" >}}
 {{< photo src="image-1.png" caption="1/29 [土豆炒肉](https://broadcast-channel-muhang.vercel.app/posts/59) 腌制肉片的时候不该加鸡蛋，炒出来有很多小渣渣" >}}
 {{< photo src="pasted-20260706-192513.png" caption="1/28 [小猫清晨谄媚](https://broadcast-channel-muhang.vercel.app/posts/58) 他不是爱我，他只是饿了" >}}
+
 {{< /photos >}}
-
-没拍照片的：
-
-- 1/31 [黄油虾尝试](https://broadcast-channel-muhang.vercel.app/posts/77)
-- 1/28 [小猫清晨谄媚](https://broadcast-channel-muhang.vercel.app/posts/58)  
-  他不是爱我，他只是饿了 😡😡😡
-
 ## 输入
 
 #### 影视

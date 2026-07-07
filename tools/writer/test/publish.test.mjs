@@ -1,6 +1,6 @@
 import { test, after } from "node:test";
 import assert from "node:assert/strict";
-import { publish } from "../lib/publish.mjs";
+import { publish, changes } from "../lib/publish.mjs";
 import { mkdtemp, mkdir, writeFile, rm } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
@@ -52,6 +52,21 @@ test("publish: nothing to commit -> ok:false with reason", async () => {
   const res = await publish(work, "noop");
   assert.equal(res.ok, false);
   assert.match(res.message, /nothing to commit/i);
+});
+
+test("changes: lists untracked and modified files", async () => {
+  const { work } = await repoWithRemote();
+  await writeFile(join(work, "seed.txt"), "changed");
+  await writeFile(join(work, "new.txt"), "hello");
+  const list = await changes(work);
+  const paths = list.map((c) => c.path).sort();
+  assert.deepEqual(paths, ["new.txt", "seed.txt"]);
+  assert.ok(list.every((c) => typeof c.status === "string" && c.status.length > 0));
+});
+
+test("changes: clean repo -> empty list", async () => {
+  const { work } = await repoWithRemote();
+  assert.deepEqual(await changes(work), []);
 });
 
 test("publish: non-git-repo path -> ok:false, does not throw", async () => {

@@ -1,6 +1,9 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { photosGrid, bigImage, blockquote, readingList } from "../src/modules.js";
+import {
+  photosGrid, bigImage, blockquote, readingList,
+  photosGridSnippet, bigImageSnippet, photoLineSnippet, readingListSnippet,
+} from "../src/modules.js";
 
 test("photosGrid: wraps photos with cols", () => {
   const out = photosGrid(2, [
@@ -27,4 +30,26 @@ test("readingList: contains 输入 heading and subsections", () => {
   assert.match(out, /## 输入/);
   assert.match(out, /#### 影视/);
   assert.match(out, /#### 播客/);
+});
+
+test("photosGridSnippet: caption fields per photo plus trailing stop", () => {
+  const out = photosGridSnippet("3", ["a.png", "b.png"]);
+  assert.match(out, /\{\{< photos cols="3" >\}\}/);
+  assert.match(out, /\{\{< photo src="a.png" caption="#\{\}" >\}\}/);
+  assert.match(out, /\{\{< photo src="b.png" caption="#\{\}" >\}\}/);
+  assert.equal(out.match(/#\{\}/g).length, 3);
+});
+
+test("bigImageSnippet: alt field then trailing stop", () => {
+  assert.equal(bigImageSnippet("x.png"), "![#{}](x.png)\n#{}");
+});
+
+test("photoLineSnippet: caption field", () => {
+  assert.equal(photoLineSnippet("x.png"), '{{< photo src="x.png" caption="#{}" >}}');
+});
+
+test("readingListSnippet: fields for titles and links", () => {
+  const out = readingListSnippet();
+  assert.match(out, /## 输入/);
+  assert.ok(out.match(/#\{\}/g).length >= 6);
 });

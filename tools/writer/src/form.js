@@ -6,11 +6,18 @@ let loaded = {};
 export function readForm() {
   const tags = document.getElementById("f-tags").value
     .split(/[,，]/).map((s) => s.trim()).filter(Boolean);
+  const dateInput = document.getElementById("f-date").value;
+  // 日期部分没改时保留原始字符串（可能带时间/时区，如 2026-07-05T20:31:00+08:00），
+  // 避免 date input 只有"日"精度导致往返丢时间。
+  const date =
+    typeof loaded.date === "string" && loaded.date.slice(0, 10) === dateInput
+      ? loaded.date
+      : dateInput;
   return {
     ...loaded,
     title: document.getElementById("f-title").value,
     summary: document.getElementById("f-summary").value,
-    date: document.getElementById("f-date").value,
+    date,
     tags,
   };
 }
