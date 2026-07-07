@@ -1,16 +1,16 @@
 ---
 title: 周记
 show_date: true
-# subtitle: subtitle
 summary: 一努力做到每周记录一次，用于追溯和回忆。
 draft: true
 authors:
   - admin
 tags:
   - 周记
-show_featured_image: false 
+show_featured_image: false
+date: '2024-10-02'
 ---
-### 👋我决定努力做到每周记录一次这周思考，用于追溯和回忆。
+
 
 #### 10-02-2024
 

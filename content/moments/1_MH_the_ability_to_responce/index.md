@@ -6,7 +6,7 @@ authors:
   - admin
 # draft: true
 tags:
-  - 自我成长
+  - 随笔
 show_featured_image: false 
 ---
 

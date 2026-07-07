@@ -7,7 +7,7 @@ summary: 河流将干涸
 authors:
   - admin
 tags:
-  - 读后感
+  - 随笔
 show_featured_image: false 
 ---
 

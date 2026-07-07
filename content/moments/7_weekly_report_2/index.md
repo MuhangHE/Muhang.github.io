@@ -1,13 +1,12 @@
 ---
 title: 周报2 SPIE和论文
-date: 2026-01-19
-# subtitle: subtitle
+date: '2026-01-19'
 summary: SPIE会议
 authors:
   - admin
 tags:
   - 周报
-show_featured_image: false 
+show_featured_image: false
 ---
 
 ## Manuscript

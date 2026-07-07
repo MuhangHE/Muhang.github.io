@@ -6,7 +6,7 @@ summary: 一些简单的事实和方法
 authors:
   - admin
 tags:
-  - 自我成长
+  - 随笔
 show_featured_image: false 
 ---
 👋我在想我们生活中有太多廉价多巴胺，及时行乐很开心，事后也总感觉空洞。
