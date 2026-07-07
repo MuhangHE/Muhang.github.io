@@ -715,3 +715,88 @@ html.hb-lb-lock {
   height: 17px;
   width: 17px;
 }
+
+/* --------------------------------------------------------------------------
+   13. Tags: term pages (/tag/…), topics index (/tags/), article tag pills
+   Templates: layouts/_default/term.html, layouts/_default/terms.html,
+   layouts/partials/tags.html. The term-page list itself reuses §7.
+   -------------------------------------------------------------------------- */
+.hb-term .hb-section-label {
+  margin-top: 20px;
+}
+.hb-term-title {
+  font-family: var(--font-serif);
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 1.3;
+  color: var(--text);
+  text-transform: none;
+  margin-top: 6px;
+}
+.hb-term-count {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: var(--text-mut);
+  margin-top: 6px;
+}
+.hb-term-desc {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--text-2);
+  margin-top: 12px;
+  max-width: 60ch;
+}
+/* Pull the first year heading closer once a term header sits above it. */
+.hb-term .hb-year:first-of-type {
+  margin-top: 36px;
+}
+
+/* Tag pills: metadata voice (mono), quieter than the skill pills — no fill
+   until hover. Shared by the topics index and article footers. */
+.hb-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.hb-tags-page {
+  margin: 6px 0 4px;
+}
+.hb-tags-index {
+  margin-top: 28px;
+}
+.hb-tags a.hb-tag {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 5px;
+  padding: 5px 13px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background-color: transparent;
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  letter-spacing: 0.02em;
+  color: var(--text-2);
+  text-decoration: none;
+  text-transform: none;
+  transition: color 0.15s ease, border-color 0.15s ease,
+    background-color 0.15s ease;
+}
+.hb-tags a.hb-tag:hover {
+  color: var(--accent-ink);
+  border-color: var(--accent-ink);
+  background-color: var(--hover);
+  text-decoration: none;
+}
+.hb-tag-hash {
+  color: var(--text-mut);
+  transition: color 0.15s ease;
+}
+.hb-tags a.hb-tag:hover .hb-tag-hash {
+  color: var(--accent-ink);
+}
+.hb-tag-count {
+  margin-left: 3px;
+  font-size: 11px;
+  color: var(--text-mut);
+}

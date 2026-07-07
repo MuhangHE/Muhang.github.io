@@ -1,0 +1,21 @@
+{{ define "main" }}
+{{/* Taxonomy term pages (/tag/…, and any future /category/…).
+     Without this file Hugo falls back to the module's `_default/list.html`
+     (huge lg:text-6xl title + card grid), which clashes with the site design.
+     Author pages are unaffected: content/authors/_index.md sets
+     `build.render: never`, so no author term page is ever rendered.
+
+     Layout: same 720px column and year-grouped list as /moments/, headed by
+     the small-caps eyebrow (taxonomy singular) + serif term title + mono
+     count. No pagination on purpose — GroupByDate must see the full set, and
+     per-term counts on this site are small. Styled by custom.css §7 + §13. */}}
+
+<div class="hb-moments hb-term pt-4 pb-8">
+  <div class="hb-section-label">{{ .Data.Singular | default "tag" }}</div>
+  <h1 class="hb-term-title">{{ .Title }}</h1>
+  <div class="hb-term-count">共 {{ len .Pages }} 篇</div>
+  {{ with .Content }}<div class="hb-term-desc">{{ . }}</div>{{ end }}
+
+  {{ partial "hb/page-list.html" .Pages }}
+</div>
+{{ end }}

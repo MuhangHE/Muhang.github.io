@@ -1,0 +1,13 @@
+{{/* Local override of the module's `partials/tags.html` (blue Flowbite
+     chips). Tag links at the foot of article pages, restyled as the site's
+     mono pills; left-aligned to match the article column instead of the
+     module's centered row. Called from the module's page_footer.html.
+     Styled by custom.css §13. */}}
+{{ $taxonomy := "tags" }}
+{{ if .Param $taxonomy }}
+<div class="hb-tags hb-tags-page">
+  {{ range (.GetTerms $taxonomy) }}
+  <a class="hb-tag" href="{{ .RelPermalink }}"><span class="hb-tag-hash">#</span>{{ .LinkTitle }}</a>
+  {{ end }}
+</div>
+{{ end }}

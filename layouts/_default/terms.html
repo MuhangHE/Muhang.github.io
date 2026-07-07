@@ -1,0 +1,22 @@
+{{ define "main" }}
+{{/* Taxonomy index (/tags/ — "Topics"). Replaces the module's Flowbite
+     button grid with the site's mono tag pills, most-used terms first.
+     Term lookup mirrors the module template (site.GetPage by path) so it
+     works on Hugo 0.135. Styled by custom.css §13. */}}
+
+<div class="hb-moments hb-term pt-4 pb-8">
+  <div class="hb-section-label">{{ .Data.Plural | default "topics" }}</div>
+  <h1 class="hb-term-title">{{ .Title }}</h1>
+  {{ with .Content }}<div class="hb-term-desc">{{ . }}</div>{{ end }}
+
+  <div class="hb-tags hb-tags-index">
+    {{- $type := .Type }}
+    {{- range .Data.Terms.ByCount }}
+      {{- $count := .Count }}
+      {{- with site.GetPage (printf "/%s/%s" $type .Name) }}
+        <a class="hb-tag" href="{{ .RelPermalink }}"><span class="hb-tag-hash">#</span>{{ .Title }}<span class="hb-tag-count">{{ $count }}</span></a>
+      {{- end }}
+    {{- end }}
+  </div>
+</div>
+{{ end }}

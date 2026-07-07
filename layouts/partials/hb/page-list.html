@@ -1,0 +1,22 @@
+{{/* Year-grouped post list — the site's canonical way to render a set of
+     pages (used by the moments-list block and by taxonomy term pages).
+     Call with a page collection:  partial "hb/page-list.html" $pages
+     Groups are years descending, items date-descending within each year;
+     nothing is hard-coded. Styled by custom.css section 7 (.hb-year,
+     .hb-moment). */}}
+{{ range .GroupByDate "2006" }}
+  <h2 class="hb-year">{{ .Key }}</h2>
+  <div class="hb-moment-group">
+    {{ range .Pages }}
+      <a class="hb-moment" href="{{ .RelPermalink }}">
+        <div class="hb-moment-main">
+          <div class="hb-moment-title">{{ .Title }}</div>
+          {{ with (.Params.summary | default .Summary) }}
+            <div class="hb-moment-quote">{{ . | plainify | chomp }}</div>
+          {{ end }}
+        </div>
+        <time class="hb-moment-date" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006 · 01 · 02" }}</time>
+      </a>
+    {{ end }}
+  </div>
+{{ end }}
